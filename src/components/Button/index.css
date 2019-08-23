@@ -15,6 +15,7 @@ pretty-button > button {
 	touch-action: manipulation;
 	white-space: nowrap;
 	border-radius: 4px;
+	outline: none;
 }
 
 pretty-button > button:hover {
@@ -52,4 +53,17 @@ pretty-button[type="dashed"] > button {
 pretty-button[type="dashed"] > button:hover {
 	color: var(--primary-bg-hv);
 	border: 1px dashed var(--primary-bg-hv);
+}
+
+pretty-button[type="link"] > button {
+	color: var(--primary-bg);
+	background-color: transparent;
+	border-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+pretty-button[type="link"] > button:hover{
+	color: var(--primary-bg-hv);
+	background-color: transparent;
 }

@@ -9,7 +9,7 @@ module.exports = () => {
 	const defaultobject = {
 		entry: './src/main/index.js',
 		output: {
-			path: path.resolve(__dirname, '..', 'dist'),
+			path: path.resolve(__dirname, 'dist'),
 			filename: 'main.js'
 		},
 		devServer: {

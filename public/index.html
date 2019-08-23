@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script>
+		function myFunction (e) {
+			const type = e.target.parentNode.getAttribute('type');
+			alert('you press: '+ type + ' Button');
+		}
+	</script>
+	<link rel="stylesheet" href="./css/main.css">
 </head>
-<body style="margin: 10px">
-    
+<body>
+	<h1> pComponents </h1>
+	<div class="basic-buttons">
+		<h3> Basic Buttons </h3>
+			<pretty-button 
+			value="Primary" 
+			type="primary"
+			onclick="myFunction"
+		>
+		</pretty-button>
+		<pretty-button 
+			value="Danger" 
+			type="danger"
+			onclick="myFunction"
+		>
+		</pretty-button>
+		<pretty-button 
+			value="Default" 
+			type="default"
+			onclick="myFunction"
+		>
+		</pretty-button>
+		<pretty-button 
+			value="Dashed" 
+			type="dashed"
+			onclick="myFunction"
+		>
+		</pretty-button>
+		<pretty-button 
+			value="Link" 
+			type="link"
+			onclick="myFunction"
+		>
+		</pretty-button>
+		<div class="props">
+			<h4> Attributes </h4>
+			<div>
+				<h5> Type </h5>
+				<div> primary </div>
+				<div> danger </div>
+				<div> default </div>
+				<div> dashed </div>
+				<div> link </div>
+			</div>
+			<div>
+				<h5> onclick </h5>
+				<div> myFunction </div>
+				<p> Callback function you heve defined will be trigger on click </p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -1,6 +1,2 @@
-import '../containers/main-container'
-
-document.addEventListener('DOMContentLoaded', () => {
-	const container = document.createElement('main-container');
-	document.body.appendChild(container);
-})
+import '../components/Button';
+import '../css/general.css';
