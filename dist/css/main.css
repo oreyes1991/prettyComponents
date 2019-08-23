@@ -1,0 +1,43 @@
+.basic-buttons {
+	max-width: 400px;
+	border: 1px solid #d3d3d3;
+	padding: 1em;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.props {
+	margin-top: .5em;
+	color: #666;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.props > h4 {
+	border-bottom: 1px solid sandybrown;
+	grid-area: 1 / 1 / span 1 / span 3;
+}
+
+.props > div > h5 {
+	padding: 10px 0;
+}
+
+.props > div > div {
+	margin: 5px 1px;
+	padding: .2em .4em;
+	font-size: .9em;
+	background: #f2f4f5;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	width: fit-content;
+}
+
+body {
+	margin: 1em;
+	background-color: ghostwhite;
+}
+
+h1 {
+	margin: .5em 0;
+	font-style: italic;
+}
