@@ -10,12 +10,12 @@
 	margin-top: .5em;
 	color: #666;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .props > h4 {
 	border-bottom: 1px solid sandybrown;
-	grid-area: 1 / 1 / span 1 / span 2;
+	grid-area: 1 / 1 / span 1 / span 3;
 }
 
 .props > div > h5 {
