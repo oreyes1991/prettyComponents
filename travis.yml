@@ -1,0 +1,37 @@
+dist: xenial
+
+language: node_js
+
+node_js: "10"
+
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - export PATH=$PATH:$HOME/.local/bin
+
+install:
+  - npm install
+
+script:
+   - npm run build 
+  # runs npm test( or anything ) for regular build and run the provision script if it is a pull request
+  - export PATH=$PATH:$HOME/.local/bin
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm test'
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: false
+  local-dir: dist
+  on:
+    branch: master
+

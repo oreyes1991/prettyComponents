@@ -23,6 +23,7 @@ pretty-button > button:hover {
 	color: var(--default-color-hv);
 }
 
+/* types */
 
 pretty-button[type="primary"] > button {
 	background-color: var(--primary-bg);
@@ -66,4 +67,18 @@ pretty-button[type="link"] > button {
 pretty-button[type="link"] > button:hover{
 	color: var(--primary-bg-hv);
 	background-color: transparent;
+}
+
+/* Sizes */
+
+pretty-button[size="large"] > button {
+	height: 40px;
+	padding: 0 15px;
+	font-size: 16px;
+}
+
+pretty-button[size="small"] > button {
+	height: 24px;
+	padding: 0 7px;
+	font-size: 14px;
 }
