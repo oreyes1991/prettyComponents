@@ -20,8 +20,6 @@ install:
 
 script:
   - npm run build
-  # runs npm test
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm test'
 
 deploy:
   provider: pages
