@@ -1,3 +1,4 @@
+---
 dist: xenial
 
 language: node_js
@@ -8,7 +9,7 @@ sudo: false
 
 branches:
   only:
-  - master
+    - master
 
 cache:
   directories:
@@ -18,7 +19,7 @@ install:
   - npm install
 
 script:
-   - npm run build 
+  - npm run build
   # runs npm test
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm test'
 
