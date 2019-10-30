@@ -10,73 +10,108 @@
 			const type = e.target.parentNode.getAttribute('type');
 			alert('you press: '+ type + ' Button');
 		}
+		function changeFunc (e) {
+			alert('click on ' + e.innerHTML);
+		}
 	</script>
 	<link rel="stylesheet" href="./css/main.css">
 	<script src="https://kit.fontawesome.com/f4734fa782.js"></script>
 </head>
 <body>
 	<h1> pComponents </h1>
-	<div class="basic-buttons">
-		<h3> Basic Buttons </h3>
+	<div class="demo-layout">
+		<div class="basic-buttons demo-box">
+			<h3> Basic Buttons </h3>
+				<pretty-button 
+				value="Primary" 
+				type="primary"
+				onclick="myFunction"
+			>
+			</pretty-button>
 			<pretty-button 
-			value="Primary" 
-			type="primary"
-			onclick="myFunction"
-		>
-		</pretty-button>
-		<pretty-button 
-			value="Danger" 
-			type="danger"
-			onclick="myFunction"
-		>
-		</pretty-button>
-		<pretty-button 
-			value="Default" 
-			type="default"
-			onclick="myFunction"
-		>
-		</pretty-button>
-		<pretty-button 
-			value="Dashed" 
-			type="dashed"
-			onclick="myFunction"
-		>
-		</pretty-button>
-		<pretty-button 
-			value="Link" 
-			type="link"
-			onclick="myFunction"
-		>
-		</pretty-button>
-		<div class="props">
-			<h4> Attributes </h4>
-			<div>
-				<h5> Type </h5>
-				<div> primary </div>
-				<div> danger </div>
-				<div> default </div>
-				<div> dashed </div>
-				<div> link </div>
+				value="Danger" 
+				type="danger"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Default" 
+				type="default"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Dashed" 
+				type="dashed"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Link" 
+				type="link"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> Type </h5>
+					<div> primary </div>
+					<div> danger </div>
+					<div> default </div>
+					<div> dashed </div>
+					<div> link </div>
+				</div>
+				<div>
+					<h5> onclick </h5>
+					<div> myFunction </div>
+					<p> Callback function will be trigger on click </p>
+				</div>
+				<div>
+					<h5> value </h5>
+					<div> buttonName </div>
+					<p> value that would be display in the button </p>
+				</div>
+				<div>
+					<h5> size </h5>
+					<div> small </div>
+					<div> large </div>
+					<div> default </div>
+				</div>
 			</div>
 			<div>
-				<h5> onclick </h5>
-				<div> myFunction </div>
-				<p> Callback function will be trigger on click </p>
-			</div>
-			<div>
-				<h5> value </h5>
-				<div> buttonName </div>
-				<p> value that would be display in the button </p>
-			</div>
-			<div>
-				<h5> size </h5>
-				<div> small </div>
-				<div> large </div>
-				<div> default </div>
+				<i class="fab fa-codepen"></i>
 			</div>
 		</div>
-		<div>
-			<i class="fab fa-codepen"></i>
+		<div class="basic-dropdown demo-box">
+			<h3> Basic DropDown </h3>
+				<pretty-button value="DropDown" id="my-target">
+
+				</pretty-button>
+				<pretty-dropdown target="my-target" onchange="changeFunc">
+					<div class="p-menu-item">
+						1st Menu Item
+					</div>
+					<div class="p-menu-divider"></div>
+					<div class="p-menu-item">
+						2nd Menu Item
+					</div>
+					<div class="p-menu-item" disabled>
+						3nd Menu Item
+					</div>
+				</pretty-dropdown>
+				<div class="props">
+					<h4> Attributes </h4>
+					<div>
+						<h5> target </h5>
+						<div> id-target </div>
+					</div>
+					<div>
+						<h5> onchange </h5>
+						<div> functionName </div>
+						<p> Callback function will be trigger on change </p>
+					</div>
+				</div>
 		</div>
 	</div>
 </body>
