@@ -6,15 +6,20 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>pComponents</title>
 	<script>
-		function myFunction (e) {
+		function myFunction(e) {
 			const type = e.target.parentNode.getAttribute('type');
 			alert('you press: '+ type + ' Button');
 		}
-		function changeFunc (e) {
+		function changeFunc(e) {
 			alert('click on ' + e.innerHTML);
+		}
+		function placement(e, ...params) {
+			const el = params[1]; // dropdown
+			el.setAttribute('placement', e.innerHTML);
 		}
 	</script>
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/responsive.css">
 	<script src="https://kit.fontawesome.com/f4734fa782.js"></script>
 </head>
 <body>
@@ -88,6 +93,9 @@
 				<pretty-button value="DropDown" id="my-target">
 
 				</pretty-button>
+				<pretty-button type="dashed" value="Placement" id="placement">
+
+				</pretty-button>
 				<pretty-dropdown target="my-target" onchange="changeFunc">
 					<div class="p-menu-item">
 						1st Menu Item
@@ -99,6 +107,15 @@
 					<div class="p-menu-item" disabled>
 						3nd Menu Item
 					</div>
+				</pretty-dropdown>
+				<pretty-dropdown target="placement" onchange="placement">
+					<div class="p-menu-item">bottom-left</div>
+					<div class="p-menu-item">bottom-center</div>
+					<div class="p-menu-item" >bottom-right</div>
+					<div class="p-menu-divider"></div>
+					<div class="p-menu-item">top-left</div>
+					<div class="p-menu-item">top-center</div>
+					<div class="p-menu-item">top-right</div>
 				</pretty-dropdown>
 				<div class="props">
 					<h4> Attributes </h4>

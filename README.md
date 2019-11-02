@@ -4,11 +4,21 @@
 ```html
 <script src="https://cdn.jsdelivr.net/gh/oreyes1991/prettyComponents@1.0.1-a/main.js"> </script>
 ```
+## Start dev server
+```shell
+npm start
+```
+
+## Build project
+```shell
+npm run build
+```
+# Components
 ## Buttons
 ```html
 <pretty-button type="primary" value="Primary" onclick="myFunction" size="default"></pretty-button>
 ```
-## Attributes
+- Attributes
 ```js
 type = ["primary", "default", "danger", "dashed"] 
 //(if not defined is asumed default)
