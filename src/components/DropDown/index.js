@@ -25,6 +25,7 @@ class DropDown extends MetaComponent {
 				) {
 					el.addEventListener('click', () => {
 						window[changeFunct](el, target, this);
+						this.classList.toggle('p-hidden');
 					})
 				}
 			})
@@ -58,11 +59,12 @@ class DropDown extends MetaComponent {
 	 */
 	setPosition(target) {
 		const xFactor = this.calcXFactor(target);
-		console.log(xFactor);
+		const yFactor = this.calcYFactor(target);
 		this.style.left = (target.offsetLeft + xFactor) + 'px';
+		this.style.top = (target.offsetHeight + target.offsetTop + yFactor) + 'px';
 	}
 	/**
-	 * calc offset x
+	 * calc offset X in px
 	 */
 	calcXFactor(target) {
 		switch(this.getXPlacement()) {
@@ -75,12 +77,27 @@ class DropDown extends MetaComponent {
 		}
 	}
 	/**
-	 * get x placement
+	 * calc offset Y in px
+	 */
+	calcYFactor(target) {
+		if (this.getYPlacement() !== 'bottom') {
+			return -target.offsetHeight - this.offsetHeight;
+		}
+		return 0;
+	}
+	/**
+	 * get x placement (Attribute)
 	 */
 	getXPlacement () {
-		console.log(this.getAttribute('placement'))
 		if (this.getAttribute('placement') === null) return 'center';
 		return this.getAttribute('placement').split('-')[1];
+	}
+	/**
+	 * get y placement (Attributte)
+	 */
+	getYPlacement () {
+		if (this.getAttribute('placement') === null) return 'bottom';
+		return this.getAttribute('placement').split('-')[0];
 	}
 	// eslint-disable-next-line class-method-use-this
 	render () {
