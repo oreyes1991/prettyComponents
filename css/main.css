@@ -1,0 +1,62 @@
+.demo-box {
+	max-width: 400px;
+	border: 1px solid #d3d3d3;
+	padding: 1em;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.props {
+	margin-top: .5em;
+	color: #666;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.props > h4 {
+	border-bottom: 1px solid sandybrown;
+	grid-area: 1 / 1 / span 1 / span 4;
+}
+
+.props > div > h5 {
+	padding: 10px 0;
+}
+
+.props > div > div {
+	margin: 5px 1px;
+	padding: .2em .4em;
+	font-size: .9em;
+	background: #f2f4f5;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	width: fit-content;
+}
+
+
+body {
+	height: 100vh;
+	background: #303030;
+}
+
+h1 {
+	font-style: italic;
+	padding: .5em;
+	color: #ffffff;
+	background: #e91e63;
+	margin-bottom: 10px;
+}
+
+.demo-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 1em 0;
+	margin: 0 1em;
+	border-radius: 0 0 4px 0;
+}
+.demo-layout > *{
+	justify-self: center;
+}
+
+.basic-dropdown .props {
+	grid-template-columns: 1fr 1fr;
+}
