@@ -11,8 +11,11 @@
 	--primary-color: #ffffff;
 	--primary-bg-hv: #40a9ff;
 	--default-color: rgba(0,0,0,0.65);
+	--dark-color-hv: #333333;
 	--default-brd: #d9d9d9;
 	--default-color-hv: #40a9ff;
 	--danger-bg: #ff4d4f;
 	--danger-bg-hv: #ff7875;
+	--border-color: #d9d9d9;
+	--defauld-bs-color: rgba(24,144,255,0.2);
 }

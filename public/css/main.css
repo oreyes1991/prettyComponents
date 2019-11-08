@@ -52,6 +52,7 @@ h1 {
 	padding: 1em 0;
 	margin: 0 1em;
 	border-radius: 0 0 4px 0;
+	grid-row-gap: 10px;
 }
 .demo-layout > *{
 	justify-self: center;
@@ -59,4 +60,13 @@ h1 {
 
 .basic-dropdown .props {
 	grid-template-columns: 1fr 1fr;
+}
+
+pretty-input > div{
+	margin-bottom: 10px;
+}
+
+.demo-box p {
+	font-size: 12px;
+	text-align: start;
 }

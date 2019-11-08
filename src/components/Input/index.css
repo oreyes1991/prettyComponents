@@ -1,0 +1,40 @@
+pretty-input input {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 4px 11px;
+	width: -webkit-fill-available;
+	height: 24px;
+	line-height: 1.5;
+	transition: all .3s;
+}
+
+pretty-input div:hover {
+	border-color: var(--default-color-hv)
+}
+
+pretty-input div.focus {
+	border-color: var(--default-color-hv);
+	box-shadow: 0 0 0 2px var(--defauld-bs-color);
+}
+
+pretty-input > div {
+	border-radius: 4px;
+	border: 1px solid var(--border-color);
+	height: fit-content;
+	display: grid;
+	grid-template-columns: 1fr 2em;
+}
+
+pretty-input > div > i{ 
+	place-self: center;
+	font-size: 16px;
+	color: var(--default-color);
+	cursor: pointer;
+	transition: all .3s;
+}
+
+pretty-input > div > i:hover{ 
+	color: var(--dark-color-hv);
+	transform: scale(1.2, 1.2);
+}
