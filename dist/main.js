@@ -113,7 +113,52 @@ function r(e,t){if(e===t)return 0;for(var n=e.length,r=t.length,u=0,i=Math.min(n
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "pretty-button > button {\n\theight: 32px;\n\tpadding: 0 15px;\n\ttransition: all .3s cubic-bezier(.645, .045, .355, 1);\n\tbox-shadow: 0 2px 0 rgba(0,0,0,0.015);\n\tposition: relative;\n\tdisplay: inline-block;\n\tline-height: 1.5;\n\tfont-weight: 400;\n\tfont-size: 14px;\n\tbackground-color: #ffffff;\n\tcolor: var(--default-color);\n\tborder: 1px solid var(--default-brd);\n\tcursor: pointer;\n\ttouch-action: manipulation;\n\twhite-space: nowrap;\n\tborder-radius: 4px;\n\toutline: none;\n}\n\npretty-button > button:hover {\n\tborder-color: var(--default-color-hv);\n\tcolor: var(--default-color-hv);\n}\n\n\npretty-button[type=\"primary\"] > button {\n\tbackground-color: var(--primary-bg);\n\tcolor: var(--primary-color);\n\tborder: 1px solid var(--primary-bg);\n}\n\npretty-button[type=\"primary\"] > button:hover {\n\tbackground-color: var(--primary-bg-hv);\n\tborder: 1px solid var(--primary-bg-hv);\n}\n\npretty-button[type=\"danger\"] > button {\n\tbackground-color: var(--danger-bg);\n\tcolor: var(--primary-color);\n\tborder: 1px solid var(--danger-bg);\n}\n\npretty-button[type=\"danger\"] > button:hover {\n\tbackground-color: var(--danger-bg-hv);\n\tborder: 1px solid var(--danger-bg-hv);\n}\n\npretty-button[type=\"dashed\"] > button {\n\tborder-style: dashed;\n}\n\npretty-button[type=\"dashed\"] > button:hover {\n\tcolor: var(--primary-bg-hv);\n\tborder: 1px dashed var(--primary-bg-hv);\n}\n\npretty-button[type=\"link\"] > button {\n\tcolor: var(--primary-bg);\n\tbackground-color: transparent;\n\tborder-color: transparent;\n\t-webkit-box-shadow: none;\n\tbox-shadow: none;\n}\n\npretty-button[type=\"link\"] > button:hover{\n\tcolor: var(--primary-bg-hv);\n\tbackground-color: transparent;\n}", ""]);
+exports.push([module.i, "pretty-button > button {\n\theight: 32px;\n\tpadding: 0 15px;\n\ttransition: all .3s cubic-bezier(.645, .045, .355, 1);\n\tbox-shadow: 0 2px 0 rgba(0,0,0,0.015);\n\tposition: relative;\n\tdisplay: inline-block;\n\tline-height: 1.5;\n\tfont-weight: 400;\n\tfont-size: 14px;\n\tbackground-color: #ffffff;\n\tcolor: var(--default-color);\n\tborder: 1px solid var(--default-brd);\n\tcursor: pointer;\n\ttouch-action: manipulation;\n\twhite-space: nowrap;\n\tborder-radius: 4px;\n\toutline: none;\n}\n\npretty-button > button:hover {\n\tborder-color: var(--default-color-hv);\n\tcolor: var(--default-color-hv);\n}\n\n/* types */\n\npretty-button[type=\"primary\"] > button {\n\tbackground-color: var(--primary-bg);\n\tcolor: var(--primary-color);\n\tborder: 1px solid var(--primary-bg);\n}\n\npretty-button[type=\"primary\"] > button:hover {\n\tbackground-color: var(--primary-bg-hv);\n\tborder: 1px solid var(--primary-bg-hv);\n}\n\npretty-button[type=\"danger\"] > button {\n\tbackground-color: var(--danger-bg);\n\tcolor: var(--primary-color);\n\tborder: 1px solid var(--danger-bg);\n}\n\npretty-button[type=\"danger\"] > button:hover {\n\tbackground-color: var(--danger-bg-hv);\n\tborder: 1px solid var(--danger-bg-hv);\n}\n\npretty-button[type=\"dashed\"] > button {\n\tborder-style: dashed;\n}\n\npretty-button[type=\"dashed\"] > button:hover {\n\tcolor: var(--primary-bg-hv);\n\tborder: 1px dashed var(--primary-bg-hv);\n}\n\npretty-button[type=\"link\"] > button {\n\tcolor: var(--primary-bg);\n\tbackground-color: transparent;\n\tborder-color: transparent;\n\t-webkit-box-shadow: none;\n\tbox-shadow: none;\n}\n\npretty-button[type=\"link\"] > button:hover{\n\tcolor: var(--primary-bg-hv);\n\tbackground-color: transparent;\n}\n\n/* Sizes */\n\npretty-button[size=\"large\"] > button {\n\theight: 40px;\n\tpadding: 0 15px;\n\tfont-size: 16px;\n}\n\npretty-button[size=\"small\"] > button {\n\theight: 24px;\n\tpadding: 0 7px;\n\tfont-size: 14px;\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/DropDown/index.css":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/DropDown/index.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "pretty-dropdown {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tcolor: rgba(0,0,0,0.65);\n\tfont-size: 14px;\n\tline-height: 1.5;\n\tlist-style: none;\n\tposition: absolute;\n\tz-index: 1050;\n\tdisplay: block;\n\tmargin: 0;\n\tpadding: 4px 0;\n\ttext-align: left;\n\tlist-style-type: none;\n\tbackground-color: #fff;\n\tbackground-clip: padding-box;\n\tborder-radius: 4px;\n\toutline: none;\n\t-webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.15);\n\tbox-shadow: 0 2px 8px rgba(0,0,0,0.15);\n\t-webkit-transform: translate3d(0, 0, 0);\n}\n\npretty-dropdown ::before {\n\tposition: absolute;\n\ttop: -7px;\n\tright: 0;\n\tbottom: -7px;\n\tleft: -7px;\n\tz-index: -9999;\n\topacity: .0001;\n\tcontent: ' ';\n}\n\n.p-menu-item {\n\tdisplay: block;\n\tpadding: 5px 12px;\n\tcolor: var(--default-color);\n\t-webkit-transition: all .3s;\n\ttransition: all .3s;\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n.p-menu-divider {\n\tborder-bottom: 1px solid #d3d3d3;\n}\n\n.p-menu-item:hover {\n\tbackground-color: #e6f7ff;\n}\n\npretty-dropdown.p-hidden {\n\topacity: 0;\n\tvisibility: hidden;\n}\n\npretty-dropdown > *[disabled] {\n\tcolor: rgba(0,0,0,0.25);\n\tbackground-color: #f5f5f5;\n\tcursor: not-allowed;\n}\n\npretty-dropdown > *[disabled]:hover {\n\tcolor: rgba(0,0,0,0.25);\n\tbackground-color: #f5f5f5;\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Input/index.css":
+/*!******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Input/index.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "pretty-input input {\n\tbackground-color: transparent;\n\tborder: none;\n\toutline: none;\n\tpadding: 4px 11px;\n\twidth: -webkit-fill-available;\n\theight: 32px;\n\tline-height: 1.5;\n\ttransition: all .3s;\n\tbox-sizing: border-box;\n}\n\npretty-input div:hover {\n\tborder-color: var(--default-color-hv)\n}\n\npretty-input div.focus {\n\tborder-color: var(--default-color-hv);\n\tbox-shadow: 0 0 0 2px var(--defauld-bs-color);\n}\n\npretty-input > div {\n\tborder-radius: 4px;\n\tborder: 1px solid var(--border-color);\n\theight: fit-content;\n\tdisplay: grid;\n\tgrid-template-columns: 1fr 2em;\n}\n\npretty-input > div > i{ \n\tplace-self: center;\n\tfont-size: 16px;\n\tcolor: var(--default-color);\n\tcursor: pointer;\n\ttransition: all .3s;\n}\n\npretty-input > div > i:hover{ \n\tcolor: var(--dark-color-hv);\n\ttransform: scale(1.2, 1.2);\n}\n\n/* Sizes */\n\npretty-input[size=\"large\"] input {\n\theight: 40px;\n\tpadding: 6px 11px;\n\tfont-size: 16px;\n}\n\npretty-input[size=\"small\"] input {\n\theight: 24px;\n\tpadding: 1px 7px;\n}\n\npretty-input .lds-dual-ring {\n\twidth: 18px;\n\theight: 18px;\n}\n\npretty-input .lds-dual-ring::after {\n\twidth: 15px;\n\theight: 15px;\n}\n\npretty-input pretty-spinner {\n\tmargin-top: 5px;\n\tmargin-left: 5px;\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/Spiner/index.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/Spiner/index.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "/* square */\n.lds-grid {\n\tdisplay: inline-block;\n\tposition: relative;\n\twidth: 64px;\n\theight: 64px;\n}\n.lds-grid div {\n\tposition: absolute;\n\twidth: 13px;\n\theight: 13px;\n\tborder-radius: 50%;\n\tbackground: #fff;\n\tanimation: lds-grid 1.2s linear infinite;\n}\n.lds-grid div:nth-child(1) {\n\ttop: 6px;\n\tleft: 6px;\n\tanimation-delay: 0s;\n}\n.lds-grid div:nth-child(2) {\n\ttop: 6px;\n\tleft: 26px;\n\tanimation-delay: -0.4s;\n}\n.lds-grid div:nth-child(3) {\n\ttop: 6px;\n\tleft: 45px;\n\tanimation-delay: -0.8s;\n}\n.lds-grid div:nth-child(4) {\n\ttop: 26px;\n\tleft: 6px;\n\tanimation-delay: -0.4s;\n}\n.lds-grid div:nth-child(5) {\n\ttop: 26px;\n\tleft: 26px;\n\tanimation-delay: -0.8s;\n}\n.lds-grid div:nth-child(6) {\n\ttop: 26px;\n\tleft: 45px;\n\tanimation-delay: -1.2s;\n}\n.lds-grid div:nth-child(7) {\n\ttop: 45px;\n\tleft: 6px;\n\tanimation-delay: -0.8s;\n}\n.lds-grid div:nth-child(8) {\n\ttop: 45px;\n\tleft: 26px;\n\tanimation-delay: -1.2s;\n}\n.lds-grid div:nth-child(9) {\n\ttop: 45px;\n\tleft: 45px;\n\tanimation-delay: -1.6s;\n}\n@keyframes lds-grid {\n\t0%, 100% {\n\topacity: 1;\n\t}\n\t50% {\n\t\topacity: 0.5;\n\t}\n}\n/* circular */\n.lds-dual-ring {\n\tdisplay: inline-block;\n\twidth: -webkit-fill-available;\n\theight:-webkit-fill-available;\n}\n.lds-dual-ring:after {\n\tcontent: \" \";\n\tdisplay: block;\n\twidth: -webkit-fill-available;\n\theight: -webkit-fill-available;\n\tmargin: 1px;\n\tborder-radius: 50%;\n\tborder: 3px solid var(--default-color);\n\tborder-color: var(--default-color) transparent var(--default-color) transparent;\n\tanimation: lds-dual-ring 1.2s linear infinite;\n}\n@keyframes lds-dual-ring {\n\t0% {\n\t\ttransform: rotate(0deg);\n\t}\n\t100% {\n\t\ttransform: rotate(360deg);\n\t}\n}", ""]);
 
 
 
@@ -131,7 +176,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap);", ""]);
 
 // Module
-exports.push([module.i, "* {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: Roboto;\n}\n\n:root {\n\t--primary-bg: #1890ff;\n\t--primary-color: #ffffff;\n\t--primary-bg-hv: #40a9ff;\n\t--default-color: rgba(0,0,0,0.65);\n\t--default-brd: #d9d9d9;\n\t--default-color-hv: #40a9ff;\n\t--danger-bg: #ff4d4f;\n\t--danger-bg-hv: #ff7875;\n}", ""]);
+exports.push([module.i, "* {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: Roboto;\n}\n\n:root {\n\t--primary-bg: #1890ff;\n\t--primary-color: #ffffff;\n\t--primary-bg-hv: #40a9ff;\n\t--default-color: rgba(0,0,0,0.65);\n\t--dark-color-hv: #333333;\n\t--default-brd: #d9d9d9;\n\t--default-color-hv: #40a9ff;\n\t--danger-bg: #ff4d4f;\n\t--danger-bg-hv: #ff7875;\n\t--border-color: #d9d9d9;\n\t--defauld-bs-color: rgba(24,144,255,0.2);\n}", ""]);
 
 
 
@@ -843,8 +888,10 @@ class Button extends _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["MetaC
 		const value = this.getAttribute("value") !== null
 			? this.getAttribute("value")
 			: 'value';
+		const id = this.id ? this.id : '';
+		this.id = '';
 		return `
-			<button type="button"> ${ value } </button>
+			<button id="${id}" type="button"> ${ value } </button>
 		`;
 	}
 
@@ -861,6 +908,396 @@ class Button extends _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["MetaC
 window.customElements.define('pretty-button', Button);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./src/components/DropDown/index.css":
+/*!*******************************************!*\
+  !*** ./src/components/DropDown/index.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./index.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/DropDown/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/DropDown/index.js":
+/*!******************************************!*\
+  !*** ./src/components/DropDown/index.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @rebelstack-io/metaflux */ "./node_modules/@rebelstack-io/metaflux/dist/metaflux.js");
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.css */ "./src/components/DropDown/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class DropDown extends _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["MetaComponent"] {
+	/**
+	 * MetaComponent constructor
+	 */
+	constructor () {
+		super();
+	}
+	/**
+	 * add DOM listeners
+	 */
+	addListeners () {
+		const target = document.querySelector("#" + this.getAttribute('target'));
+		const changeFunct = this.getAttribute('onchange');
+		if (target !== null) {
+			this.targetListener(target);
+		}
+		if (changeFunct !== null) {
+			document.querySelectorAll('pretty-dropdown > *')
+			.forEach(el => {
+				if (!el.classList.contains('p-menu-divider') &&
+					el.getAttribute('disabled') === null
+				) {
+					el.addEventListener('click', () => {
+						window[changeFunct](el, target, this);
+						this.classList.toggle('p-hidden');
+					})
+				}
+			})
+		}
+	}
+	/**
+	 * Mouse enter / leave listeners
+	 * @param {HTMLElement} target 
+	 */
+	targetListener(target) {
+		target.addEventListener('mouseenter', () => {
+			this.classList.remove('p-hidden')
+			this.style.minWidth = target.offsetWidth + 'px';
+			this.setPosition(target)
+		});
+		target.addEventListener('mouseleave', (e) => {
+			if(!e.toElement.className.startsWith('p-menu')) {
+				this.classList.add('p-hidden')
+			}else {
+				this.addEventListener('mouseleave', (ev) => {
+					if (ev.toElement === null || ev.toElement.id !== this.getAttribute('target')) {
+						this.classList.add('p-hidden')
+					}
+				})
+			}
+		});
+	}
+	/**
+	 * set the the position to target's placement 
+	 * @param {Event} ev 
+	 */
+	setPosition(target) {
+		const xFactor = this.calcXFactor(target);
+		const yFactor = this.calcYFactor(target);
+		this.style.left = (target.offsetLeft + xFactor) + 'px';
+		this.style.top = (target.offsetHeight + target.offsetTop + yFactor) + 'px';
+	}
+	/**
+	 * calc offset X in px
+	 */
+	calcXFactor(target) {
+		switch(this.getXPlacement()) {
+			case 'left':
+				return (target.offsetWidth - 5) * -1;
+			case 'right':
+				return (target.offsetWidth - 5);
+			default:
+				return 0;
+		}
+	}
+	/**
+	 * calc offset Y in px
+	 */
+	calcYFactor(target) {
+		if (this.getYPlacement() !== 'bottom') {
+			return -target.offsetHeight - this.offsetHeight;
+		}
+		return 0;
+	}
+	/**
+	 * get x placement (Attribute)
+	 */
+	getXPlacement () {
+		if (this.getAttribute('placement') === null) return 'center';
+		return this.getAttribute('placement').split('-')[1];
+	}
+	/**
+	 * get y placement (Attributte)
+	 */
+	getYPlacement () {
+		if (this.getAttribute('placement') === null) return 'bottom';
+		return this.getAttribute('placement').split('-')[0];
+	}
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		this.classList.add('p-hidden');
+		return ``;
+	}
+
+}
+
+window.customElements.define('pretty-dropdown', DropDown);
+
+
+/***/ }),
+
+/***/ "./src/components/Input/index.css":
+/*!****************************************!*\
+  !*** ./src/components/Input/index.css ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./index.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/Input/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/Input/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Input/index.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @rebelstack-io/metaflux */ "./node_modules/@rebelstack-io/metaflux/dist/metaflux.js");
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../handlers */ "./src/handlers/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/components/Input/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+const DEFAULT_PASS_ICON = "far fa-eye-slash"
+const TOGGLED_PASS_ICON = "far fa-eye";
+
+class Input extends _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["MetaComponent"] {
+	/**
+	 * add DOM listeners
+	 */
+	addListeners () {
+		this.querySelector('input')
+		.addEventListener('focus', () => {
+			this.querySelector('div').classList.add('focus')
+		});
+		this.querySelector('input')
+		.addEventListener('focusout', () => {
+			this.querySelector('div').classList.remove('focus')
+		});
+		this.addShowListener();
+		var observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.type == "attributes") {
+					this.innerHTML = this.render();
+				}
+			});
+		});
+		
+		observer.observe(this, {
+			attributes: true //configure it to listen to attribute changes
+		});
+	}
+	
+	get value() {
+		return this.querySelector('input').value;
+	}
+	/**
+	 * 
+	 */
+	addShowListener() {
+		try {
+			this.querySelector('i.show').addEventListener('click', () => {
+				this.showPassword(this.querySelector('i.show'));
+			})
+		} catch (error) {
+			//
+		}
+	}
+	/**
+	 * toggle icon and input type
+	 */
+	showPassword(i) {
+		const input = this.querySelector('input');
+		if (i.classList.contains('fa-eye-slash')) {
+			i.className = TOGGLED_PASS_ICON + ' show';
+			input.setAttribute('type', 'text');
+		} else {
+			i.className = DEFAULT_PASS_ICON + ' show';
+			input.setAttribute('type', 'password');
+		}
+	}
+	/**
+	 * MetaComponent constructor needs storage.
+	 */
+	constructor () {
+		super();
+	}
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		const isPass = this.getAttribute('password') !== null
+			? this.getAttribute('password')
+			: false;
+		const isLoading = this.getAttribute('loading') !== null;
+		const placeHolder = this.getAttribute('placeholder');
+		return `
+			<div>
+				<input type="${isPass ? 'password' : 'text'}"
+				placeholder="${placeHolder !== null ? placeHolder : ''}"
+				>
+				${
+					isPass === 'show'
+					? '<i class="'+ DEFAULT_PASS_ICON +' show"></i>'
+					: ''
+				}
+				${
+					isLoading
+					? '<pretty-spinner type="circular"></pretty-spinner>'
+					: ''
+				}
+			</div>
+		`
+	}
+
+}
+
+window.customElements.define('pretty-input', Input);
+
+
+/***/ }),
+
+/***/ "./src/components/Spiner/index.css":
+/*!*****************************************!*\
+  !*** ./src/components/Spiner/index.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!./index.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/Spiner/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/Spiner/index.js":
+/*!****************************************!*\
+  !*** ./src/components/Spiner/index.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @rebelstack-io/metaflux */ "./node_modules/@rebelstack-io/metaflux/dist/metaflux.js");
+/* harmony import */ var _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.css */ "./src/components/Spiner/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class Spinner extends _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["MetaComponent"] {
+	/**
+	 * add DOM listeners
+	 */
+	addListeners () {
+	}
+	/**
+	 * MetaComponent constructor.
+	 */
+	constructor () {
+		super();
+	}
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		const type = this.getAttribute('type') !== null
+					? this.getAttribute('type')
+					: 'square'
+		return type === 'square' 
+		? `
+		<div class="lds-grid">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		`
+		:`
+		<div class="lds-dual-ring"></div>
+		`
+	}
+}
+
+window.customElements.define('pretty-spinner', Spinner);
+
 
 /***/ }),
 
@@ -959,9 +1396,17 @@ global.storage = new _rebelstack_io_metaflux__WEBPACK_IMPORTED_MODULE_0__["Store
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button/index.js");
+/* harmony import */ var _handlers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../handlers */ "./src/handlers/index.js");
 /* harmony import */ var _css_general_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/general.css */ "./src/css/general.css");
 /* harmony import */ var _css_general_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_general_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./src/components/Button/index.js");
+/* harmony import */ var _components_DropDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/DropDown */ "./src/components/DropDown/index.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Input */ "./src/components/Input/index.js");
+/* harmony import */ var _components_Spiner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Spiner */ "./src/components/Spiner/index.js");
+
+
+
+
 
 
 

@@ -19,6 +19,17 @@ class Input extends MetaComponent {
 			this.querySelector('div').classList.remove('focus')
 		});
 		this.addShowListener();
+		var observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.type == "attributes") {
+					this.innerHTML = this.render();
+				}
+			});
+		});
+		
+		observer.observe(this, {
+			attributes: true //configure it to listen to attribute changes
+		});
 	}
 	
 	get value() {
@@ -57,8 +68,10 @@ class Input extends MetaComponent {
 	}
 	// eslint-disable-next-line class-method-use-this
 	render () {
-		const isPass = this.getAttribute('password') !== null;
-		const showPass = this.getAttribute('show') !== null;
+		const isPass = this.getAttribute('password') !== null
+			? this.getAttribute('password')
+			: false;
+		const isLoading = this.getAttribute('loading') !== null;
 		const placeHolder = this.getAttribute('placeholder');
 		return `
 			<div>
@@ -66,8 +79,13 @@ class Input extends MetaComponent {
 				placeholder="${placeHolder !== null ? placeHolder : ''}"
 				>
 				${
-					showPass 
+					isPass === 'show'
 					? '<i class="'+ DEFAULT_PASS_ICON +' show"></i>'
+					: ''
+				}
+				${
+					isLoading
+					? '<pretty-spinner type="circular"></pretty-spinner>'
 					: ''
 				}
 			</div>

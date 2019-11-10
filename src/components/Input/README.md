@@ -2,10 +2,10 @@
 
 - Attributes
 
-```js
+```
 placeholder = "placeholder" // placeholder for the input
-password = true || false // input type password
-show = true || false // show password option
+password = Define input type as passworrd, if the value is "show" display a toggler
+loading = true || false // show loading animation
 ```
 - Examples
 Default input
@@ -19,6 +19,10 @@ Password input with show option
 password input without show option
 ```html
 <pretty-input placeholder="Password with show option" password show></pretty-input>
+```
+loading animation
+```html
+<pretty-input placeholder="Loading input" loading></pretty-input>
 ```
 if you want to get the value with javascript
 ```js

@@ -18,6 +18,7 @@
 			el.setAttribute('placement', e.innerHTML);
 		}
 	</script>
+	<script src="./js/codepen.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/responsive.css">
 	<script src="https://kit.fontawesome.com/f4734fa782.js"></script>
@@ -84,7 +85,7 @@
 					<div> default </div>
 				</div>
 			</div>
-			<div>
+			<div class="example btn">
 				<i class="fab fa-codepen"></i>
 			</div>
 		</div>
@@ -129,12 +130,16 @@
 						<p> Callback function will be trigger on change </p>
 					</div>
 				</div>
+				<div class="example ddw">
+					<i class="fab fa-codepen"></i>
+				</div>
 		</div>
 		<div class="basic-input demo-box">
 			<h3> Basic Input </h3>
 			<pretty-input placeholder="Basic Input"></pretty-input>
-			<pretty-input placeholder="Password with show option" password show></pretty-input>
+			<pretty-input placeholder="Password with show option" password="show"></pretty-input>
 			<pretty-input placeholder="Password without show option" password></pretty-input>
+			<pretty-input placeholder="Loading input" loading></pretty-input>
 			<div class="props">
 				<h4> Attributes </h4>
 				<div>
@@ -143,13 +148,13 @@
 				</div>
 				<div>
 					<h5> password </h5>
-					<div> boolean </div>
-					<p> Define input type as passworrd </p>
+					<div> boolean || show </div>
+					<p> Define input type as passworrd, if the value is "show" display a toggler </p>
 				</div>
 				<div>
-					<h5> show </h5>
+					<h5> loading </h5>
 					<div> boolean </div>
-					<p> Define show password option </p>
+					<p> loading state </p>
 				</div>
 				<div>
 					<h5> size </h5>
@@ -157,6 +162,9 @@
 					<div> large </div>
 					<div> default </div>
 				</div>
+			</div>
+			<div class="example inp">
+				<i class="fab fa-codepen"></i>
 			</div>
 		</div>
 	</div>

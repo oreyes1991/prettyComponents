@@ -4,9 +4,10 @@ pretty-input input {
 	outline: none;
 	padding: 4px 11px;
 	width: -webkit-fill-available;
-	height: 24px;
+	height: 32px;
 	line-height: 1.5;
 	transition: all .3s;
+	box-sizing: border-box;
 }
 
 pretty-input div:hover {
@@ -37,4 +38,32 @@ pretty-input > div > i{
 pretty-input > div > i:hover{ 
 	color: var(--dark-color-hv);
 	transform: scale(1.2, 1.2);
+}
+
+/* Sizes */
+
+pretty-input[size="large"] input {
+	height: 40px;
+	padding: 6px 11px;
+	font-size: 16px;
+}
+
+pretty-input[size="small"] input {
+	height: 24px;
+	padding: 1px 7px;
+}
+
+pretty-input .lds-dual-ring {
+	width: 18px;
+	height: 18px;
+}
+
+pretty-input .lds-dual-ring::after {
+	width: 15px;
+	height: 15px;
+}
+
+pretty-input pretty-spinner {
+	margin-top: 5px;
+	margin-left: 5px;
 }
