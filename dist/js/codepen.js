@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 })
 
-
-
-
 function redirect (code) {
-	console.log(code)
 	switch (code) {
 		case 'btn':
 			window.open(BASE_URL + 'QWWaVBv','_blank');
