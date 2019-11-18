@@ -19,6 +19,8 @@ function redirect (code) {
 		case 'inp':
 			window.open(BASE_URL + 'WNNyqzX','_blank');
 			break;
+		case 'tag':
+			window.open(BASE_URL + 'qBBLmXO', '_blank')
 		default:
 			window.open(BASE_URL + 'QWWaVBv','_blank');
 			break;
