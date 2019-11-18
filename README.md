@@ -2,7 +2,7 @@
     A library like Antd but with webcomponents
 # CDN
 ```html
-<script src="https://cdn.jsdelivr.net/gh/oreyes1991/prettyComponents@1.0.1-d/main.js"> </script>
+<script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.1-d/main.js"> </script>
 ```
 ## Start dev server
 ```shell
