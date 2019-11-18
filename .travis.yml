@@ -1,18 +1,17 @@
----
 dist: xenial
 language: node_js
 node_js: '10'
 sudo: false
 branches:
   only:
-    - master
+  - master
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
-  - npm install
+- npm install
 script:
-  - npm run build
+- npm run build
 deploy:
   provider: pages
   skip-cleanup: true
@@ -21,3 +20,5 @@ deploy:
   local-dir: dist
   on:
     branch: master
+  token:
+    secure: MPyynjHaMKnBE9ABNq0AZCAxiskyqcOWzLLVGua5tZsicwnB2bnO7IZpyEL9/igr/ERCacXECPJ10AHOKy/N+oR2jlNgVd8WM0byU4LGej2yojaIMJiQ+FD+qHGAVOUZXqBiurRiQ5RH+LVDufOeCMw5dbbZfolGS7JVEso/JkqYE4XnuTFgyN6Fcmb1bXJYDbu8mDSlVCGydpv31Do2cvzvncnux9xoHs7TCsbQTQIUqe2DFllh+to4++32uiWZRcRO7UPzubRB3gi9jWndMvx/LqkP7LdqC8qsYyEDiHEPYENyCXt2Q1MdgcvphsYaDq1muyQcKP19hQwKHRDSvXJI3ympR4Qk91yp9iI3OLPgMI1XxMTK1KgbOFYxAUQ7AS+RNCQfEIqW1E6ZYcskJ4A31zAnjF5/7zSumZyPrkDcTMoyHOwZw9hkrJRbK9CkYmCUJMy3EbElEvjItRklGjJXvqx5vRLWiCwb2Fn+xJaVuV/wPHXRH12Fwfx9+VU8yPfhN82c0aAmbE1D089C0KYhrdKQyiMcIcmX/dyOBDSTXhPMLincMCgIjfAy0exbq0dG6vJdhA3ny0BeK/Vn746o/MdtncMZgxiZXT2kDxyefwXqWUoDjJ1+eqva9PyAtPhczawqR+OnbLwLJHgx2wkvEJiLR98tz2717OBOeds=
