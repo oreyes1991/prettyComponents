@@ -1,0 +1,46 @@
+pretty-tag > div {
+	border: 1px solid var(--default-brd);
+	width: fit-content;
+	padding: 5px 10px;
+	border-radius: 1em;
+	user-select: none;
+}
+
+pretty-tag .close {
+	color: var(--default-color);
+	cursor: pointer;
+}
+
+pretty-tag .lds-dual-ring {
+	width: 18px;
+	height: 18px;
+}
+
+pretty-tag span {
+	font-size: 14px;
+}
+
+pretty-tag .custom-icon {
+	color: var(--default-color);
+}
+
+pretty-tag[selectable] > div:hover{
+	border-color: var(--default-color-hv);
+	color: var(--default-color-hv);
+}
+
+pretty-tag[selectable] > div {
+	cursor: pointer;
+}
+
+pretty-tag.selected > div {
+	background-color: var(--primary-bg);
+	color: var(--primary-color);
+	border: 1px solid var(--primary-bg);
+}
+
+pretty-tag.selected > div:hover{
+	background-color: var(--primary-bg-hv);
+	border: 1px solid var(--primary-bg-hv);
+	color: var(--primary-color);
+}

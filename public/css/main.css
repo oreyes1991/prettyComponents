@@ -91,3 +91,19 @@ pretty-input > div{
 	box-shadow: 2px 2px 5px var(--border-color);
 	border-radius: 50%;
 }
+
+.basic-tag > .static-tags {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.basic-tag > .selectable {
+	display: grid;
+	grid-auto-flow: column;
+}
+
+.basic-tag > .dynamic-tags {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	position: relative;
+}
