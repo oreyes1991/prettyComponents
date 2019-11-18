@@ -33,7 +33,7 @@ module.exports = () => {
 					]
 				},
 				{
-					test: /\.(png|jpg|gif|svg)$/,
+					test: /\.(png|jpg|gif|svg|ttf|eot|svg)$/,
 					use: [
 						{
 							loader: 'file-loader',
@@ -43,6 +43,10 @@ module.exports = () => {
 						},
 					],
 				},
+				{
+					test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+					use: 'url-loader?limit=10000',
+				}
 			]
 		},
 		resolve: {

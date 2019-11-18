@@ -17,11 +17,18 @@
 			const el = params[1]; // dropdown
 			el.setAttribute('placement', e.innerHTML);
 		}
+		function onSelect(selected, that, ev) {
+			if (selected) {
+				alert('Select ' + that.name)
+			} else {
+				alert('Unselect ' + that.name)
+			}
+		}
 	</script>
 	<script src="./js/codepen.js"></script>
+	<script src="./js/tags.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/responsive.css">
-	<script src="https://kit.fontawesome.com/f4734fa782.js"></script>
 </head>
 <body>
 	<h1> pComponents </h1>
@@ -164,6 +171,64 @@
 				</div>
 			</div>
 			<div class="example inp">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+		<div class="basic-tag demo-box">
+			<h3> Basic Tag </h3>
+			<div class="static-tags">
+				<pretty-tag value="Basic Tag"></pretty-tag>
+				<pretty-tag value="Tag with icon" icon="fas fa-biking"></pretty-tag>
+			</div>
+			<label> Selectable </label>
+			<div class="selectable">
+				<pretty-tag selectable onselect="onSelect" class="selected" value="Tag 1"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 2"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 3"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 4"></pretty-tag>
+			</div>
+			<label>Closables</label>
+			<div class="dynamic-tags">
+
+			</div>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> value </h5>
+					<div> value/name </div>
+				</div>
+				<div>
+					<h5> close </h5>
+					<div> boolean </div>
+					<p>set type to closable tag</p>
+				</div>
+				<div>
+					<h5> onclose </h5>
+					<div> Callback </div>
+					<p>callback on close event</p>
+				</div>
+				<div>
+					<h5> selectable </h5>
+					<div> boolean </div>
+					<p>set type to selectable tag</p>
+				</div>
+				<div>
+					<h5> onselect </h5>
+					<div> Callback </div>
+					<p>callback on close event</p>
+				</div>
+				<div>
+					<h5> loading </h5>
+					<div> boolean </div>
+					<p> loading state </p>
+				</div>
+				<div>
+					<h5> icon </h5>
+					<div> FA-font class </div>
+					<p> Font awesome class </p>
+				</div>
+			</div>
+			<div class="example tag">
 				<i class="fab fa-codepen"></i>
 			</div>
 		</div>
