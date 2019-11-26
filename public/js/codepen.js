@@ -8,21 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 })
 
-function redirect (code) {
-	switch (code) {
-		case 'btn':
-			window.open(BASE_URL + 'QWWaVBv','_blank');
-			break;
-		case 'ddw':
-			window.open(BASE_URL + 'Yzzvoay','_blank');
-			break;
-		case 'inp':
-			window.open(BASE_URL + 'WNNyqzX','_blank');
-			break;
-		case 'tag':
-			window.open(BASE_URL + 'qBBLmXO', '_blank')
-		default:
-			window.open(BASE_URL + 'QWWaVBv','_blank');
-			break;
-	}
+function redirect(code) {
+	window.open(BASE_URL + code,'_blank');
 }
