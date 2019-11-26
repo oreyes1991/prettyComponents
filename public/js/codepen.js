@@ -2,7 +2,7 @@ const BASE_URL = "https://codepen.io/osszzyy/pen/";
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.example').forEach(ex => {
-		ex.querySelector('i').addEventListener('click', () => {
+		ex.addEventListener('click', () => {
 			redirect(ex.classList[1]);
 		})
 	})

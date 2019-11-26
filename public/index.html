@@ -24,6 +24,12 @@
 				alert('Unselect ' + that.name)
 			}
 		}
+		document.addEventListener('DOMContentLoaded', () => {
+			document.querySelector('.demo-head > .demo-gh').addEventListener('click',
+			() => {
+				window.open('https://github.com/rebelstackio/prettyComponents','_blank');
+			})
+		})
 	</script>
 	<script src="./js/codepen.js"></script>
 	<script src="./js/tags.js"></script>
@@ -31,7 +37,12 @@
 	<link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
-	<h1> pComponents </h1>
+	<div class="demo-head">
+		<h1> pComponents </h1>
+		<div class="demo-gh">
+			<i class="fab fa-github"></i>
+		</div>
+	</div>
 	<div class="demo-layout">
 		<div class="basic-buttons demo-box">
 			<h3> Basic Buttons </h3>
@@ -250,27 +261,25 @@
 			<div class="props">
 				<h4> Attributes </h4>
 				<div>
-					<h5> placeholder </h5>
-					<div> placeholder </div>
+					<h5> title </h5>
+					<div> Card title </div>
 				</div>
 				<div>
-					<h5> password </h5>
-					<div> boolean || show </div>
-					<p> Define input type as passworrd, if the value is "show" display a toggler </p>
+					<h5> description </h5>
+					<div> Card description </div>
 				</div>
 				<div>
-					<h5> loading </h5>
+					<h5> avatar </h5>
+					<div> URL </div>
+					<p> image url </p>
+				</div>
+				<div>
+					<h5> bordered </h5>
 					<div> boolean </div>
-					<p> loading state </p>
-				</div>
-				<div>
-					<h5> size </h5>
-					<div> small </div>
-					<div> large </div>
-					<div> default </div>
+					<p>Display bordered card</p>
 				</div>
 			</div>
-			<div class="example WNNyqzX">
+			<div class="example xxxoaKK">
 				<i class="fab fa-codepen"></i>
 			</div>
 		</div>
