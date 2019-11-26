@@ -1,7 +1,7 @@
 .demo-box {
 	max-width: 400px;
 	border: 1px solid #d3d3d3;
-	padding: 1em;
+	padding: 1em 1em 1.5em 1em;
 	border-radius: 3px;
 	background-color: #ffffff;
 	position: relative;
@@ -39,12 +39,14 @@ body {
 	background: #303030;
 }
 
-h1 {
+.demo-head {
 	font-style: italic;
 	padding: .5em;
 	color: #ffffff;
 	background: #e91e63;
 	margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: 1fr 35px;
 }
 
 .demo-layout {
@@ -81,12 +83,12 @@ pretty-input > div{
 	bottom: 10px;
 }
 
-.example > i {
+.example > svg {
 	cursor: pointer;
 	transition: all .3s;
 }
 
-.example > i:hover {
+.example > svg:hover {
 	transform: scale(1.2,1.2) rotate(3deg);
 	box-shadow: 2px 2px 5px var(--border-color);
 	border-radius: 50%;
@@ -106,4 +108,18 @@ pretty-input > div{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	position: relative;
+}
+.demo-gh {
+	place-self: center;
+}
+.demo-gh > svg {
+	font-size: 24px;
+	transition: all .3s ease-in;
+	opacity: .7;
+	cursor: pointer;
+}
+
+.demo-gh > svg:hover {
+	transform: scale(1.2, 1.2);
+	opacity: 1;
 }

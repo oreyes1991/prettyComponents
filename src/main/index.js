@@ -5,4 +5,5 @@ import '../components/DropDown';
 import '../components/Input';
 import '../components/Spiner';
 import '../components/Tag';
-import '@fortawesome/fontawesome-free/css/all.css';
+import '../components/Card';
+import '@fortawesome/fontawesome-free/js/all';

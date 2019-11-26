@@ -27,7 +27,7 @@ pretty-input > div {
 	grid-template-columns: 1fr 2em;
 }
 
-pretty-input > div > i{ 
+pretty-input > div > svg{ 
 	place-self: center;
 	font-size: 16px;
 	color: var(--default-color);
@@ -35,7 +35,7 @@ pretty-input > div > i{
 	transition: all .3s;
 }
 
-pretty-input > div > i:hover{ 
+pretty-input > div > svg:hover{ 
 	color: var(--dark-color-hv);
 	transform: scale(1.2, 1.2);
 }
