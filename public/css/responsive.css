@@ -2,5 +2,12 @@
     .demo-layout {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
+        margin: 0 8px;
+    }
+    .protrait-only {
+        display: block !important;
+    }
+    .landscape-only {
+        display: none;
     }
 }

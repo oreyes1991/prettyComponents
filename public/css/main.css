@@ -46,7 +46,17 @@ body {
 	background: #e91e63;
 	margin-bottom: 10px;
 	display: grid;
-	grid-template-columns: 1fr 35px;
+	grid-template-columns: 64px 1fr 35px;
+	column-gap: 10px;
+}
+
+.demo-head > * {
+	align-self: center;
+}
+
+.demo-head > img {
+	background-color: rgba(255,255,255,.3);
+	border-radius: 50%;
 }
 
 .demo-layout {
@@ -106,7 +116,7 @@ pretty-input > div{
 
 .basic-tag > .dynamic-tags {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	position: relative;
 }
 .demo-gh {
@@ -122,4 +132,12 @@ pretty-input > div{
 .demo-gh > svg:hover {
 	transform: scale(1.2, 1.2);
 	opacity: 1;
+}
+
+.protrait-only {
+	display: none;
+}
+
+.basic-collapse.demo-box {
+	width: 450px;
 }
