@@ -137,3 +137,7 @@ pretty-input > div{
 .protrait-only {
 	display: none;
 }
+
+.basic-collapse.demo-box {
+	width: 450px;
+}
