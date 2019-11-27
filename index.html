@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta property="og:title" content="Pretty Components">
+	<meta property="og:image" content="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574877548/prettyOG.png">
+	<meta property="og:description" content="Styled WebComponents">
+	<meta property="og:url" content="https://rebelstackio.github.io/prettyComponents/index.html">
+	<meta name="twitter:card" content="summary_large_image">
+	<title>&lt;Pretty/&gt;</title>
+	<script>
+		function myFunction(e) {
+			const type = e.target.parentNode.getAttribute('type');
+			alert('you press: '+ type + ' Button');
+		}
+		function changeFunc(e) {
+			alert('click on ' + e.innerHTML);
+		}
+		function placement(e, ...params) {
+			const el = params[1]; // dropdown
+			el.setAttribute('placement', e.innerHTML);
+		}
+		function onSelect(selected, that, ev) {
+			if (selected) {
+				alert('Select ' + that.name)
+			} else {
+				alert('Unselect ' + that.name)
+			}
+		}
+		document.addEventListener('DOMContentLoaded', () => {
+			document.querySelector('.demo-head > .demo-gh').addEventListener('click',
+			() => {
+				window.open('https://github.com/rebelstackio/prettyComponents','_blank');
+			})
+		})
+	</script>
+	<script src="./js/codepen.js"></script>
+	<script src="./js/tags.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/responsive.css">
+	<link rel="icon" type="image/png" href="./img/favicon.png">
+</head>
+<body>
+	<div class="demo-head">
+		<img src="./img/c269f4b54361d5a415a6491cdf3e7e98.gif">
+		<h1 class="landscape-only">&lt;Pretty-components/&gt;</h1>
+		<h1 class="protrait-only">&lt;Pretty/&gt;</h1>
+		<div class="demo-gh">
+			<i class="fab fa-github"></i>
+		</div>
+	</div>
+	<div class="demo-layout">
+<!-----------------------BUTTONS--------------------------------------------------->
+		<div class="basic-buttons demo-box">
+			<h3> Basic Buttons </h3>
+				<pretty-button 
+				value="Primary" 
+				type="primary"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Danger" 
+				type="danger"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Default" 
+				type="default"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Dashed" 
+				type="dashed"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<pretty-button 
+				value="Link" 
+				type="link"
+				onclick="myFunction"
+			>
+			</pretty-button>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> Type </h5>
+					<div> primary </div>
+					<div> danger </div>
+					<div> default </div>
+					<div> dashed </div>
+					<div> link </div>
+				</div>
+				<div>
+					<h5> onclick </h5>
+					<div> myFunction </div>
+					<p> Callback function will be trigger on click </p>
+				</div>
+				<div>
+					<h5> value </h5>
+					<div> buttonName </div>
+					<p> value that would be display in the button </p>
+				</div>
+				<div>
+					<h5> size </h5>
+					<div> small </div>
+					<div> large </div>
+					<div> default </div>
+				</div>
+			</div>
+			<div class="example QWWaVBv">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+<!-----------------------DROPDOWN-------------------------------------------------->
+		<div class="basic-dropdown demo-box">
+			<h3> Basic DropDown </h3>
+				<pretty-button value="DropDown" id="my-target">
+
+				</pretty-button>
+				<pretty-button type="dashed" value="Placement" id="placement">
+
+				</pretty-button>
+				<pretty-dropdown target="my-target" onchange="changeFunc">
+					<div class="p-menu-item">
+						1st Menu Item
+					</div>
+					<div class="p-menu-divider"></div>
+					<div class="p-menu-item">
+						2nd Menu Item
+					</div>
+					<div class="p-menu-item" disabled>
+						3nd Menu Item
+					</div>
+				</pretty-dropdown>
+				<pretty-dropdown target="placement" onchange="placement">
+					<div class="p-menu-item">bottom-left</div>
+					<div class="p-menu-item">bottom-center</div>
+					<div class="p-menu-item" >bottom-right</div>
+					<div class="p-menu-divider"></div>
+					<div class="p-menu-item">top-left</div>
+					<div class="p-menu-item">top-center</div>
+					<div class="p-menu-item">top-right</div>
+				</pretty-dropdown>
+				<div class="props">
+					<h4> Attributes </h4>
+					<div>
+						<h5> target </h5>
+						<div> id-target </div>
+					</div>
+					<div>
+						<h5> onchange </h5>
+						<div> functionName </div>
+						<p> Callback function will be trigger on change </p>
+					</div>
+				</div>
+				<div class="example Yzzvoay">
+					<i class="fab fa-codepen"></i>
+				</div>
+		</div>
+<!------------------------INPUTS--------------------------------------------------->
+		<div class="basic-input demo-box">
+			<h3> Basic Input </h3>
+			<pretty-input placeholder="Basic Input"></pretty-input>
+			<pretty-input placeholder="Password with show option" password="show"></pretty-input>
+			<pretty-input placeholder="Password without show option" password></pretty-input>
+			<pretty-input placeholder="Loading input" loading></pretty-input>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> placeholder </h5>
+					<div> placeholder </div>
+				</div>
+				<div>
+					<h5> password </h5>
+					<div> boolean || show </div>
+					<p> Define input type as passworrd, if the value is "show" display a toggler </p>
+				</div>
+				<div>
+					<h5> loading </h5>
+					<div> boolean </div>
+					<p> loading state </p>
+				</div>
+				<div>
+					<h5> size </h5>
+					<div> small </div>
+					<div> large </div>
+					<div> default </div>
+				</div>
+			</div>
+			<div class="example WNNyqzX">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+<!--------------------------TAGS--------------------------------------------------->
+		<div class="basic-tag demo-box">
+			<h3> Basic Tag </h3>
+			<div class="static-tags">
+				<pretty-tag value="Basic Tag"></pretty-tag>
+				<pretty-tag value="Tag with icon" icon="fas fa-biking"></pretty-tag>
+			</div>
+			<label> Selectable </label>
+			<div class="selectable">
+				<pretty-tag selectable onselect="onSelect" class="selected" value="Tag 1"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 2"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 3"></pretty-tag>
+				<pretty-tag selectable onselect="onSelect" value="Tag 4"></pretty-tag>
+			</div>
+			<label>Closables</label>
+			<div class="dynamic-tags">
+
+			</div>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> value </h5>
+					<div> value/name </div>
+				</div>
+				<div>
+					<h5> close </h5>
+					<div> boolean </div>
+					<p>set type to closable tag</p>
+				</div>
+				<div>
+					<h5> onclose </h5>
+					<div> Callback </div>
+					<p>callback on close event</p>
+				</div>
+				<div>
+					<h5> selectable </h5>
+					<div> boolean </div>
+					<p>set type to selectable tag</p>
+				</div>
+				<div>
+					<h5> onselect </h5>
+					<div> Callback </div>
+					<p>callback on close event</p>
+				</div>
+				<div>
+					<h5> loading </h5>
+					<div> boolean </div>
+					<p> loading state </p>
+				</div>
+				<div>
+					<h5> icon </h5>
+					<div> FA-font class </div>
+					<p> Font awesome class </p>
+				</div>
+			</div>
+			<div class="example qBBLmXO">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+<!-------------------------CARDS--------------------------------------------------->
+		<div class="basic-cards demo-box">
+			<h3> Basic card </h3>
+			<pretty-card title="Basic card" description="with description" bordered>
+				<span> content </span>
+				<span> content </span>
+			</pretty-card>
+			<label> Card with avatar </label>
+			<pretty-card
+				title="Ammy Smith"
+				description="chief technology officer"
+				bordered
+				avatar="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574803077/girl-919048_960_720.jpg"
+			>
+			 
+			</pretty-card>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> title </h5>
+					<div> Card title </div>
+				</div>
+				<div>
+					<h5> description </h5>
+					<div> Card description </div>
+				</div>
+				<div>
+					<h5> avatar </h5>
+					<div> URL </div>
+					<p> image url </p>
+				</div>
+				<div>
+					<h5> bordered </h5>
+					<div> boolean </div>
+					<p>Display bordered card</p>
+				</div>
+			</div>
+			<div class="example xxxoaKK">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+<!-----------------------COLLAPSE-------------------------------------------------->
+		<div class="basic-collapse demo-box">
+			<h3> Basic Collapse </h3>
+			<pretty-collapse>
+				<pretty-collapse-item title="Collapse title">
+					sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+				</pretty-collapse-item>
+				<pretty-collapse-item title="Collapse title">
+					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+				</pretty-collapse-item>
+			</pretty-collapse>
+			<label>Borderless</label>
+			<pretty-collapse borderless>
+				<pretty-collapse-item title="Collapse title">
+					sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+				</pretty-collapse-item>
+				<pretty-collapse-item title="Collapse title">
+					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+				</pretty-collapse-item>
+			</pretty-collapse>
+			<label>Nested</label>
+			<pretty-collapse>
+				<pretty-collapse-item title="Nested collapse">
+					<pretty-collapse>
+						<pretty-collapse-item title="Nested 1">
+							sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+						</pretty-collapse-item>
+						<pretty-collapse-item title="Nested 2">
+							ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+						</pretty-collapse-item>
+					</pretty-collapse>
+				</pretty-collapse-item>
+				<pretty-collapse-item title="Collapse title">
+					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+				</pretty-collapse-item>
+			</pretty-collapse>
+			<div class="props">
+				<h4> Attributes </h4>
+				<div>
+					<h5> borderless </h5>
+					<div> boolean </div>
+				</div>
+				<div>
+					<h5> Title </h5>
+					<div> panel-title </div>
+				</div>
+				<div>
+					<h5> expanded </h5>
+					<div> boolean </div>
+				</div>
+			</div>
+			<div class="example vYYogVE">
+				<i class="fab fa-codepen"></i>
+			</div>
+		</div>
+<!-----------------------FIN-------------------------------------------------->
+	</div>
+<script type="text/javascript" src="main.js"></script></body>
+</html>
