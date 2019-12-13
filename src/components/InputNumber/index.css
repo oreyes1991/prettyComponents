@@ -1,0 +1,52 @@
+/*------------SIZES--------------------------------------*/
+pretty-input-number[size="large"] > .input-number-body {
+    height: 40px;
+}
+pretty-input-number[size="small"] > .input-number-body {
+    height: 24px;
+}
+/*----------------------------------------------------*/
+pretty-input-number > .input-number-body {
+    display: grid;
+    grid-template-columns: 70px 30px;
+    border-radius: 4px;
+    height: 32px;
+    width: fit-content;
+}
+
+pretty-input-number > .input-number-body  > input {
+    outline: none;
+    padding-left: 5px;
+    border: 1px solid var(--default-brd);
+    border-radius: 4px 0 0 4px ;
+    height: -webkit-fill-available;
+}
+
+pretty-input-number .input-handler {
+    display: grid;
+    border: 1px solid var(--default-brd);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    height: -webkit-fill-available;
+    overflow: hidden;
+}
+
+
+pretty-input-number .input-handler > * {
+    place-self: center;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    transition: all .2s;
+}
+
+pretty-input-number .input-handler > *:first-child:hover {
+    transform: scale(1.5,1.5);
+    box-shadow: 0px 2px 7px -2px var(--default-color-light);
+}
+
+pretty-input-number .input-handler > *:last-child:hover {
+    transform: scale(1.5,1.5);
+    box-shadow: 0px 0px 7px -2px var(--default-color-light);
+}
