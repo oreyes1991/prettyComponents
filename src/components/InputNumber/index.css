@@ -12,23 +12,28 @@ pretty-input-number > .input-number-body {
     border-radius: 4px;
     height: 32px;
     width: fit-content;
+    border: 1px solid var(--default-brd);
+    box-sizing: border-box;
+}
+
+pretty-input-number > .input-number-body:hover {
+    border-color: #40a9ff;
 }
 
 pretty-input-number > .input-number-body  > input {
     outline: none;
     padding-left: 5px;
-    border: 1px solid var(--default-brd);
-    border-radius: 4px 0 0 4px ;
+    border: none;
+    border-right: 1px solid var(--default-brd);
     height: -webkit-fill-available;
 }
 
 pretty-input-number .input-handler {
     display: grid;
-    border: 1px solid var(--default-brd);
     border-left: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
-    height: -webkit-fill-available;
+    /*height: -webkit-fill-available;*/
     overflow: hidden;
 }
 
@@ -39,14 +44,33 @@ pretty-input-number .input-handler > * {
     width: 100%;
     text-align: center;
     transition: all .2s;
+    color: var(--default-color);
 }
 
 pretty-input-number .input-handler > *:first-child:hover {
     transform: scale(1.5,1.5);
     box-shadow: 0px 2px 7px -2px var(--default-color-light);
+    color: var(--default-color-hv);
 }
 
 pretty-input-number .input-handler > *:last-child:hover {
     transform: scale(1.5,1.5);
     box-shadow: 0px 0px 7px -2px var(--default-color-light);
+    color: var(--default-color-hv);
+}
+
+pretty-input-number .input-handler > .disabled:hover {
+    cursor: not-allowed;
+    transform: scale(1,1);
+    box-shadow: unset;
+    color: var(--default-color);
+}
+
+pretty-input-number .input-number-body.focus {
+	border-color: var(--default-color-hv);
+	box-shadow: 0 0 0 2px var(--defauld-bs-color);
+}
+
+pretty-input-number[size="small"] .input-handler > * {
+    font-size: 10px;
 }

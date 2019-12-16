@@ -2,8 +2,8 @@ import { MetaComponent } from '@rebelstack-io/metaflux';
 import '../../handlers';
 import './index.css';
 
-const DEFAULT_PASS_ICON = "far fa-eye-slash"
-const TOGGLED_PASS_ICON = "far fa-eye";
+const DEFAULT_PASS_ICON = "fa-eye-slash"
+const TOGGLED_PASS_ICON = "fa-eye";
 
 class Input extends MetaComponent {
 	/**
@@ -40,23 +40,26 @@ class Input extends MetaComponent {
 	 */
 	addShowListener() {
 		try {
-			this.querySelector('i.show').addEventListener('click', () => {
-				this.showPassword(this.querySelector('i.show'));
+			this.querySelector('.show').addEventListener('click', () => {
+				this.showPassword(this.querySelector('.show > svg'));
 			})
 		} catch (error) {
 			//
 		}
 	}
 	/**
+	 * svg-inline--fa fa-eye-slash fa-w-20
 	 * toggle icon and input type
 	 */
 	showPassword(i) {
 		const input = this.querySelector('input');
 		if (i.classList.contains('fa-eye-slash')) {
-			i.className = TOGGLED_PASS_ICON + ' show';
+			i.classList.remove('fa-eye-slash')
+			i.classList.add('far',TOGGLED_PASS_ICON);
 			input.setAttribute('type', 'text');
 		} else {
-			i.className = DEFAULT_PASS_ICON + ' show';
+			i.classList.remove('fa-eye-slash')
+			i.classList.add('far',DEFAULT_PASS_ICON);
 			input.setAttribute('type', 'password');
 		}
 	}
@@ -80,7 +83,9 @@ class Input extends MetaComponent {
 				>
 				${
 					isPass === 'show'
-					? '<i class="'+ DEFAULT_PASS_ICON +' show"></i>'
+					? `<div class="show">
+						<i class="far ${DEFAULT_PASS_ICON}"></i>
+						<div>`
 					: ''
 				}
 				${

@@ -67,3 +67,18 @@ pretty-input pretty-spinner {
 	margin-top: 5px;
 	margin-left: 5px;
 }
+
+pretty-input .show {
+	place-self: center;
+	transition: all .3s;
+	color: var(--default-color);
+}
+
+pretty-input .show > * {
+	place-self: center;
+}
+
+pretty-input .show:hover{ 
+	color: var(--dark-color-hv);
+	transform: scale(1.2, 1.2);
+}
