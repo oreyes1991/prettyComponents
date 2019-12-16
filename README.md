@@ -2,7 +2,7 @@
     A library like Antd but with webcomponents
 # CDN
 ```html
-<script src="https://cdn.jsdelivr.net/gh/oreyes1991/prettyComponents@1.0.1-f/main.js"> </script>
+<script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-a/main.js"> </script>
 ```
 ## Start dev server
 ```shell
@@ -213,4 +213,32 @@ Nested
         TEXT
     </pretty-collapse-item>
 </pretty-collapse>
+```
+
+## pretty input number
+
+- Attributes
+
+```
+size = small || default || large
+min = number
+max = number
+factor = number
+```
+- Examples
+Default input
+```html
+<pretty-input-number></pretty-input-number>
+```
+with min || max
+```html
+<pretty-input-number min="3" max="7"></pretty-input-number>
+```
+with custom increment factor
+```html
+<pretty-input-number factor="5"></pretty-input-number>
+```
+if you want to get the value with javascript
+```js
+document.querySelector('pretty-input-number#my-element').value
 ```

@@ -23,5 +23,5 @@ with custom increment factor
 ```
 if you want to get the value with javascript
 ```js
-document.querySelector('pretty-input#my-element').value
+document.querySelector('pretty-input-number#my-element').value
 ```
