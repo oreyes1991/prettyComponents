@@ -7,13 +7,17 @@ class InputButton extends MetaComponent {
 		this.increment = this.increment.bind(this);
 	}
 
+	get value() {
+		return this.val;
+	}
+
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const props = this.getProps();
-		this.value = props.min ? props.min : 0;
+		this.val = props.min ? props.min : 0;
 		return `
 			<div class="input-number-body">
-				<input value="${ this.value }"></input>
+				<input value="${ this.val }"></input>
 				<div class="input-handler">
 					<div class="up">
 						<i class="fas fa-angle-up"></i>
@@ -53,10 +57,10 @@ class InputButton extends MetaComponent {
 	 * @param {Integer} factor 
 	 */
 	increment(factor) {
-		this.value = this.checkMinMax(this.value + factor)
-			? this.value + factor
-			: this.value;
-		this.querySelector('input').setAttribute('value', this.value);
+		this.val = this.checkMinMax(this.val + factor)
+			? this.val + factor
+			: this.val;
+		this.querySelector('input').setAttribute('value', this.val);
 	}
 	/**
 	 * 
