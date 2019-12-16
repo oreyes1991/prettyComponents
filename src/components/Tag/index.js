@@ -16,7 +16,7 @@ class Tag extends MetaComponent {
 				${props.icon}
 				<span>${props.value}</span>
 				${props.isCloseable
-				? '<i class="fas fa-times-circle close"></i>'
+				? '<div class="close"><i class="fas fa-times-circle"></i></div>'
 				: ''}
 				${props.loading
 					? '<pretty-spinner type="circular"></pretty-spinner>'
@@ -114,7 +114,7 @@ class Tag extends MetaComponent {
 		try {
 			const btn = this.querySelector('.close');
 			btn.addEventListener('click', (e) => {
-				callback(btn, this, e);
+				callback(this.querySelector('.close'), this, e);
 			})
 		} catch (err){
 			console.error('Pretty-tag error: ', err);

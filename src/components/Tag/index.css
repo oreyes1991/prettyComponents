@@ -4,6 +4,9 @@ pretty-tag > div {
 	padding: 5px 10px;
 	border-radius: 1em;
 	user-select: none;
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 10px;
 }
 
 pretty-tag .close {
