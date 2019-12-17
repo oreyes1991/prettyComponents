@@ -150,3 +150,16 @@ pretty-input > div{
 .inp-num-demo label {
 	font-size: 12px;
 }
+
+.modal-img {
+	display: grid;
+}
+
+.modal-img > img {
+	place-self: center;
+	width: 100px;
+	height: auto;
+	padding: 10px;
+	border-radius: 50%;
+	background-color: rgba(255,255,255, .5);
+}

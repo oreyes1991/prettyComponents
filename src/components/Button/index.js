@@ -23,6 +23,7 @@ class Button extends MetaComponent {
 	}
 	// eslint-disable-next-line class-method-use-this
 	render () {
+		this.innerHTML = '';
 		const value = this.getAttribute("value") !== null
 			? this.getAttribute("value")
 			: 'value';

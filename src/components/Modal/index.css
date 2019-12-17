@@ -1,48 +1,65 @@
 pretty-modal > .modal-box { 
-    display: none;
-    visibility: hidden;
-    opacity: 0;
+	display: none;
+	visibility: hidden;
+	opacity: 0;
 }
 
 pretty-modal[visible] > .modal-box {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: grid;
-    background-color: rgba(0,0,0,.5);
-    visibility: visible;
-    opacity: 1;
-    transition: all .3s;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: grid;
+	background-color: rgba(0,0,0,.5);
+	visibility: visible;
+	opacity: 1;
+	transition: all .3s;
+}
+
+pretty-modal[transparent] .modal-wrapper{
+	background: transparent;
+    box-shadow: none;
+    color: #fff;
+}
+
+pretty-modal[transparent] .modal-title {
+	border-bottom: unset;
 }
 
 pretty-modal > .modal-box > * {
-    place-self: center;
-    width: fit-content;
-    max-width: 500px;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    pointer-events: auto;
+	place-self: center;
+	width: fit-content;
+	max-width: 500px;
+	min-width: 400px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	pointer-events: auto;
 }
 
 pretty-modal .modal-title {
-    display: grid;
-    grid-template-columns: 1fr 15px;
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+	display: grid;
+	grid-template-columns: 1fr 15px;
+	padding: 10px;
+	border-bottom: 1px solid var(--border-color);
 }
 
 pretty-modal .modal-body {
-    padding: 24px;
-    font-size: 14px;
-    line-height: 1.5;
-    word-wrap: break-word;
+	padding: 24px;
+	font-size: 14px;
+	line-height: 1.5;
+	word-wrap: break-word;
 }
 
 pretty-modal .modal-close {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+pretty-modal .modal-footer {
+	padding: 10px;
+	border-top: 1px solid var(--border-color);
+	text-align: end;
 }
