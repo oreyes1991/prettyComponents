@@ -1,0 +1,24 @@
+pretty-menu > .p-menu-box {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding-left: 0;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 0;
+    list-style: none;
+    background: #fff;
+    outline: none;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    -webkit-transition: background 0.3s, width 0.2s;
+    transition: background 0.3s, width 0.2s;
+    zoom: 1;
+    min-width: 250px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}

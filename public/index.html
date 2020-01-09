@@ -34,6 +34,11 @@
 			() => {
 				window.open('https://github.com/rebelstackio/prettyComponents','_blank');
 			})
+			window.storage.on('change-view', (action) => {
+				const root = document.location.pathname;
+				document.querySelector('pretty-template')
+				.setAttribute('src', root + action.data)
+			})
 		});
 		function openModal() {
 			document.querySelector('#basic-modal').open();
@@ -48,11 +53,13 @@
 			document.querySelector('#transparent-modal').open();
 		}
 	</script>
-	<script src="./js/codepen.js"></script>
-	<script src="./js/tags.js"></script>
+	<!--<script src="./js/codepen.js"></script>
+	<script src="./js/tags.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/responsive.css">
 	<link rel="icon" type="image/png" href="./img/favicon.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
 </head>
 <body>
 	<div class="demo-head">
@@ -63,397 +70,84 @@
 			<i class="fab fa-github"></i>
 		</div>
 	</div>
+	<pretty-menu offset-top="80">
+		<pretty-menu-item 
+			action="change-view" 
+			action-data="views/default/index.html"
+			icon="fas fa-home">
+			<div>
+				Home
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/button/index.html"
+		>
+			<div id="p-btns">
+				Buttons
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/dropdown/index.html"
+		>
+			<div id="p-dropdown">
+				Dropdowns
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/input/index.html"
+		>
+			<div id="p-input">
+				Inputs
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/inputnumber/index.html"
+		>
+			<div id="p-inputnumber">
+				Input Number
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/tag/index.html"
+		>
+			<div id="p-tag">
+				Tags
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/card/index.html"
+		>
+			<div id="p-card">
+				Cards
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/collapse/index.html"
+		>
+			<div id="p-collapse">
+				Collapse
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/modal/index.html"
+		>
+			<div id="p-modal">
+				Modal
+			</div>
+		</pretty-menu-item>
+	</pretty-menu>
 	<div class="demo-layout">
-<!-----------------------BUTTONS--------------------------------------------------->
-		<div class="basic-buttons demo-box">
-			<h3> Basic Buttons </h3>
-				<pretty-button 
-				value="Primary" 
-				type="primary"
-				onclick="myFunction"
-			>
-			</pretty-button>
-			<pretty-button 
-				value="Danger" 
-				type="danger"
-				onclick="myFunction"
-			>
-			</pretty-button>
-			<pretty-button 
-				value="Default" 
-				type="default"
-				onclick="myFunction"
-			>
-			</pretty-button>
-			<pretty-button 
-				value="Dashed" 
-				type="dashed"
-				onclick="myFunction"
-			>
-			</pretty-button>
-			<pretty-button 
-				value="Link" 
-				type="link"
-				onclick="myFunction"
-			>
-			</pretty-button>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> Type </h5>
-					<div> primary </div>
-					<div> danger </div>
-					<div> default </div>
-					<div> dashed </div>
-					<div> link </div>
-				</div>
-				<div>
-					<h5> onclick </h5>
-					<div> myFunction </div>
-					<p> Callback function will be trigger on click </p>
-				</div>
-				<div>
-					<h5> value </h5>
-					<div> buttonName </div>
-					<p> value that would be display in the button </p>
-				</div>
-				<div>
-					<h5> size </h5>
-					<div> small </div>
-					<div> large </div>
-					<div> default </div>
-				</div>
-			</div>
-			<div class="example QWWaVBv">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!-----------------------DROPDOWN-------------------------------------------------->
-		<div class="basic-dropdown demo-box">
-			<h3> Basic DropDown </h3>
-				<pretty-button value="DropDown" id="my-target">
+		<pretty-template src="views/default/index.html">
 
-				</pretty-button>
-				<pretty-button type="dashed" value="Placement" id="placement">
-
-				</pretty-button>
-				<pretty-dropdown target="my-target" onchange="changeFunc">
-					<div class="p-menu-item">
-						1st Menu Item
-					</div>
-					<div class="p-menu-divider"></div>
-					<div class="p-menu-item">
-						2nd Menu Item
-					</div>
-					<div class="p-menu-item" disabled>
-						3nd Menu Item
-					</div>
-				</pretty-dropdown>
-				<pretty-dropdown target="placement" onchange="placement">
-					<div class="p-menu-item">bottom-left</div>
-					<div class="p-menu-item">bottom-center</div>
-					<div class="p-menu-item" >bottom-right</div>
-					<div class="p-menu-divider"></div>
-					<div class="p-menu-item">top-left</div>
-					<div class="p-menu-item">top-center</div>
-					<div class="p-menu-item">top-right</div>
-				</pretty-dropdown>
-				<div class="props">
-					<h4> Attributes </h4>
-					<div>
-						<h5> target </h5>
-						<div> id-target </div>
-					</div>
-					<div>
-						<h5> onchange </h5>
-						<div> functionName </div>
-						<p> Callback function will be trigger on change </p>
-					</div>
-				</div>
-				<div class="example Yzzvoay">
-					<i class="fab fa-codepen"></i>
-				</div>
-		</div>
-<!------------------------INPUTS--------------------------------------------------->
-		<div class="basic-input demo-box">
-			<h3> Basic Input </h3>
-			<pretty-input placeholder="Basic Input"></pretty-input>
-			<pretty-input placeholder="Password with show option" password="show"></pretty-input>
-			<pretty-input placeholder="Password without show option" password></pretty-input>
-			<pretty-input placeholder="Loading input" loading></pretty-input>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> placeholder </h5>
-					<div> placeholder </div>
-				</div>
-				<div>
-					<h5> password </h5>
-					<div> boolean || show </div>
-					<p> Define input type as passworrd, if the value is "show" display a toggler </p>
-				</div>
-				<div>
-					<h5> loading </h5>
-					<div> boolean </div>
-					<p> loading state </p>
-				</div>
-				<div>
-					<h5> size </h5>
-					<div> small </div>
-					<div> large </div>
-					<div> default </div>
-				</div>
-			</div>
-			<div class="example WNNyqzX">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!--------------------------TAGS--------------------------------------------------->
-		<div class="basic-tag demo-box">
-			<h3> Basic Tag </h3>
-			<div class="static-tags">
-				<pretty-tag value="Basic Tag"></pretty-tag>
-				<pretty-tag value="Tag with icon" icon="fas fa-biking"></pretty-tag>
-			</div>
-			<label> Selectable </label>
-			<div class="selectable">
-				<pretty-tag selectable onselect="onSelect" class="selected" value="Tag 1"></pretty-tag>
-				<pretty-tag selectable onselect="onSelect" value="Tag 2"></pretty-tag>
-				<pretty-tag selectable onselect="onSelect" value="Tag 3"></pretty-tag>
-				<pretty-tag selectable onselect="onSelect" value="Tag 4"></pretty-tag>
-			</div>
-			<label>Closables</label>
-			<div class="dynamic-tags">
-
-			</div>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> value </h5>
-					<div> value/name </div>
-				</div>
-				<div>
-					<h5> close </h5>
-					<div> boolean </div>
-					<p>set type to closable tag</p>
-				</div>
-				<div>
-					<h5> onclose </h5>
-					<div> Callback </div>
-					<p>callback on close event</p>
-				</div>
-				<div>
-					<h5> selectable </h5>
-					<div> boolean </div>
-					<p>set type to selectable tag</p>
-				</div>
-				<div>
-					<h5> onselect </h5>
-					<div> Callback </div>
-					<p>callback on close event</p>
-				</div>
-				<div>
-					<h5> loading </h5>
-					<div> boolean </div>
-					<p> loading state </p>
-				</div>
-				<div>
-					<h5> icon </h5>
-					<div> FA-font class </div>
-					<p> Font awesome class </p>
-				</div>
-			</div>
-			<div class="example qBBLmXO">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!-------------------------CARDS--------------------------------------------------->
-		<div class="basic-cards demo-box">
-			<h3> Basic card </h3>
-			<pretty-card title="Basic card" description="with description" bordered>
-				<span> content </span>
-				<span> content </span>
-			</pretty-card>
-			<label> Card with avatar </label>
-			<pretty-card
-				title="Ammy Smith"
-				description="chief technology officer"
-				bordered
-				avatar="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574803077/girl-919048_960_720.jpg"
-			>
-			 
-			</pretty-card>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> title </h5>
-					<div> Card title </div>
-				</div>
-				<div>
-					<h5> description </h5>
-					<div> Card description </div>
-				</div>
-				<div>
-					<h5> avatar </h5>
-					<div> URL </div>
-					<p> image url </p>
-				</div>
-				<div>
-					<h5> bordered </h5>
-					<div> boolean </div>
-					<p>Display bordered card</p>
-				</div>
-			</div>
-			<div class="example xxxoaKK">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!-----------------------COLLAPSE-------------------------------------------------->
-		<div class="basic-collapse demo-box">
-			<h3> Basic Collapse </h3>
-			<pretty-collapse>
-				<pretty-collapse-item title="Collapse title">
-					sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
-				</pretty-collapse-item>
-				<pretty-collapse-item title="Collapse title">
-					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
-				</pretty-collapse-item>
-			</pretty-collapse>
-			<label>Borderless</label>
-			<pretty-collapse borderless>
-				<pretty-collapse-item title="Collapse title">
-					sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
-				</pretty-collapse-item>
-				<pretty-collapse-item title="Collapse title">
-					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
-				</pretty-collapse-item>
-			</pretty-collapse>
-			<label>Nested</label>
-			<pretty-collapse>
-				<pretty-collapse-item title="Nested collapse">
-					<pretty-collapse>
-						<pretty-collapse-item title="Nested 1">
-							sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
-						</pretty-collapse-item>
-						<pretty-collapse-item title="Nested 2">
-							ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
-						</pretty-collapse-item>
-					</pretty-collapse>
-				</pretty-collapse-item>
-				<pretty-collapse-item title="Collapse title">
-					ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
-				</pretty-collapse-item>
-			</pretty-collapse>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> borderless </h5>
-					<div> boolean </div>
-				</div>
-				<div>
-					<h5> Title </h5>
-					<div> panel-title </div>
-				</div>
-				<div>
-					<h5> expanded </h5>
-					<div> boolean </div>
-				</div>
-			</div>
-			<div class="example vYYogVE">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!-----------------------INPUT NUMBER--------------------------------------------->
-		<div class="basic-input-number demo-box">
-			<h3> Basic Input number </h3>
-			<div class="inp-num-demo">
-				<div>
-					<label> Default </label>
-					<pretty-input-number></pretty-input-number>
-				</div>
-				<div>
-					<label>With min and max</label>
-					<pretty-input-number min="3" max="7"></pretty-input-number>
-				</div>
-				<div>
-					<label>Custom Increment factor</label>
-					<pretty-input-number factor="5"></pretty-input-number>
-				</div>
-			</div>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> size </h5>
-					<div> small </div>
-					<div> large </div>
-					<div> default </div>
-				</div>
-				<div>
-					<h5> min </h5>
-					<div> number </div>
-				</div>
-				<div>
-					<h5> max </h5>
-					<div> number </div>
-				</div>
-				<div>
-					<h5> factor </h5>
-					<div> number </div>
-				</div>
-			</div>
-			<div class="example bGNBbbx">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!-----------------------MODAL--------------------------------------------->
-		<div class="basic-modal demo-box">
-			<h3> Basic modal </h3>
-			<pretty-button value="Basic" onclick="openModal"></pretty-button>
-			<pretty-button value="Footless" onclick="openFootLessModal"></pretty-button>
-			<pretty-button value="custom footer" onclick="openCustomFooterModal"></pretty-button>
-			<pretty-button value="Transparent" type="dashed" onclick="openTransparentModal"></pretty-button>
-			<pretty-modal title="basic modal" id="basic-modal">
-				<p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
-			</pretty-modal>
-			<pretty-modal title="Footless Modal" id="fooless-modal" footless>
-				<p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
-			</pretty-modal>
-			<pretty-modal title="Custom Footer Modal" id="custom-modal">
-				<h3>Are you happy?</h3>
-				<div class="modal-footer">
-					<pretty-button value="Hell No!" type="danger" id="cancel"></pretty-button>
-					<pretty-button value="Hell Yeah!" type="primary" id="cancel"></pretty-button>
-				</div>
-			</pretty-modal>
-			<pretty-modal id="transparent-modal" footless headless transparent>
-				<div class="modal-img">
-					<img src="./img/c269f4b54361d5a415a6491cdf3e7e98.gif">
-				</div>
-			</pretty-modal>
-			<div class="props">
-				<h4> Attributes </h4>
-				<div>
-					<h5> footless </h5>
-					<div> Boolean </div>
-				</div>
-				<div>
-					<h5> headless </h5>
-					<div> Boolean </div>
-				</div>
-				<div>
-					<h5> transparent </h5>
-					<div> Boolean </div>
-				</div>
-				<div>
-					<h5> visible </h5>
-					<div> Boolean </div>
-				</div>
-			</div>
-			<div class="example bGNBbbx">
-				<i class="fab fa-codepen"></i>
-			</div>
-		</div>
-<!--------------------------------------------------------------------------------->
+		</pretty-template>
 	</div>
 </body>
 </html>

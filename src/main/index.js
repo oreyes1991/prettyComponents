@@ -10,4 +10,7 @@ import '../components/Collapse';
 import '../components/Collapse/CollapseItem';
 import '../components/InputNumber';
 import '../components/Modal';
+import '../components/Menu';
+import '../components/Menu/MenuItem';
+import '../components/Template';
 import '@fortawesome/fontawesome-free/js/all';

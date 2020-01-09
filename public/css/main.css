@@ -1,5 +1,4 @@
 .demo-box {
-	max-width: 400px;
 	border: 1px solid #d3d3d3;
 	padding: 1em 1em 1.5em 1em;
 	border-radius: 3px;
@@ -48,6 +47,10 @@ body {
 	display: grid;
 	grid-template-columns: 64px 1fr 35px;
 	column-gap: 10px;
+	position: fixed;
+	width: 99%;
+	z-index: 100000;
+	top: 0;
 }
 
 .demo-head > * {
@@ -61,14 +64,17 @@ body {
 
 .demo-layout {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	padding: 1em 0;
-	margin: 0 1em;
-	border-radius: 0 0 4px 0;
-	grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+    padding: 1em 0;
+    margin: 0 1em;
+    border-radius: 0 0 4px 0;
+    grid-row-gap: 10px;
+    margin-left: 255px;
+    margin-top: 85px;
+    height: 87vh;
 }
 .demo-layout > *{
-	justify-self: center;
+	place-self: center;
 }
 
 .basic-dropdown .props {
@@ -162,4 +168,10 @@ pretty-input > div{
 	padding: 10px;
 	border-radius: 50%;
 	background-color: rgba(255,255,255, .5);
+}
+
+.starting {
+	padding: 15px;
+	background-color: #ffffff;
+	border-radius: 3px;
 }

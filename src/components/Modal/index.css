@@ -30,8 +30,7 @@ pretty-modal[transparent] .modal-title {
 pretty-modal > .modal-box > * {
 	place-self: center;
 	width: fit-content;
-	max-width: 500px;
-	min-width: 400px;
+	min-width: 350px;
 	box-sizing: border-box;
 	background-color: #fff;
 	border-radius: 4px;

@@ -28,9 +28,9 @@ class Button extends MetaComponent {
 			? this.getAttribute("value")
 			: 'value';
 		const id = this.id ? this.id : '';
-		this.id = '';
+		this.removeAttribute('id');
 		return `
-			<button id="${id}" type="button"> ${ value } </button>
+			<button ${id ? ('id="' + id + '"') : ''} type="button"> ${ value } </button>
 		`;
 	}
 
