@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server  --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_MODE=build ./node_modules/.bin/webpack --mode development; cp -R ./public/css ./dist/; cp -R ./public/js ./dist/; cp -R ./public/img ./dist/"
+    "build": "NODE_MODE=build ./node_modules/.bin/webpack --mode development; cp -R ./public/css ./dist/; cp -R ./public/js ./dist/; cp -R ./public/img ./dist/; cp -R ./public/views ./dist/;"
   },
   "contributors": [
     {
