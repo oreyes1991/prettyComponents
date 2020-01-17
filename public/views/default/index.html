@@ -2,16 +2,17 @@
 <div class="starting">
     <h3> Getting started </h3>
     <pre>
+        <label for="cdn">CDN</label>
         <code class="xml hljs">
-            &lt;script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-a/main.js"&gt; </script>
+            <script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-a/main.js"> </script>
         </code>
+        <input name="cdn" class="hidden" type="text" value="&lt;script src=&quot;https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-a/main.js&quot;&gt; &lt;/script&gt;">
     </pre>
 </div>
 
 <script type="text/javascript">
-        console.log('holo')
-    document.addEventListener('DOMContentLoaded', () => {
-        hljs.initHighlightingOnLoad();
-        document.querySelector('code.xml').innerHTML = hljs.highlight('html', document.querySelector('code.xml').innerHTML, 0 , 0)
-    })
+        console.log(hljs.highlight('html', document.querySelector('code.xml').innerHTML, 0 , 0));
+        hljs.initHighlighting();
+        hljs.configure()
+        document.querySelector('code.xml').innerHTML = hljs.highlight('html', document.querySelector('code.xml').innerHTML, 0 , 0).value
 </script>

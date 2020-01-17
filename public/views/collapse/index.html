@@ -48,7 +48,55 @@
             <div> boolean </div>
         </div>
     </div>
-    <div class="example vYYogVE">
-        <i class="fab fa-codepen"></i>
-    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
 </div>
+
+
+<script>
+    const exTXT = `
+    <pretty-collapse>
+        <pretty-collapse-item title="Collapse title">
+            sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+        </pretty-collapse-item>
+        <pretty-collapse-item title="Collapse title">
+            ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+        </pretty-collapse-item>
+    </pretty-collapse>
+
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Collapse title">
+            sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+        </pretty-collapse-item>
+        <pretty-collapse-item title="Collapse title">
+            ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+        </pretty-collapse-item>
+    </pretty-collapse>
+    
+    <pretty-collapse>
+        <pretty-collapse-item title="Nested collapse">
+            <pretty-collapse>
+                <pretty-collapse-item title="Nested 1">
+                    sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt
+                </pretty-collapse-item>
+                <pretty-collapse-item title="Nested 2">
+                    ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+                </pretty-collapse-item>
+            </pretty-collapse>
+        </pretty-collapse-item>
+        <pretty-collapse-item title="Collapse title">
+            ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis
+        </pretty-collapse-item>
+    </pretty-collapse>
+    `;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

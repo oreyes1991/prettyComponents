@@ -35,7 +35,23 @@
             <div> number </div>
         </div>
     </div>
-    <div class="example bGNBbbx">
-        <i class="fab fa-codepen"></i>
-    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
 </div>
+
+<script>
+    const exTXT = `
+    <pretty-input-number></pretty-input-number>
+    <pretty-input-number min="3" max="7"></pretty-input-number>
+    <pretty-input-number factor="5"></pretty-input-number>`;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

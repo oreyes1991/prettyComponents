@@ -1,8 +1,10 @@
 # Pretty components
     A library like Antd but with webcomponents
+# live examples
+[Pretty Components](https://rebelstackio.github.io/prettyComponents/)
 # CDN
 ```html
-<script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-a/main.js"> </script>
+<script src="https://cdn.jsdelivr.net/gh/rebelstackio/prettyComponents@1.0.2-b/main.js"> </script>
 ```
 ## Start dev server
 ```shell

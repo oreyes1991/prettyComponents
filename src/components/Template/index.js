@@ -58,8 +58,10 @@ class Template extends MetaComponent {
 	handleStoreEvents() {
 		return {
 			'P_TEMPLATE_HTML': (action) => {
-				console.log(action)
 				this.querySelector('.p-template-box').innerHTML = action.data.html;
+				this.querySelectorAll('.p-template-box script').forEach(sc => {
+					eval(sc.innerHTML);
+				})
 			}
 		}
 	}

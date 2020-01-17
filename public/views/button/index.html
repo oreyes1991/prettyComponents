@@ -57,7 +57,31 @@
             <div> default </div>
         </div>
     </div>
-    <div class="example QWWaVBv">
-        <i class="fab fa-codepen"></i>
-    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example" id="btn-exmaple">
+            <pre>
+                <code class="xml hljs">
+                    <pretty-button value="Primary" type="primary" onclick="myFunction">
+                    </pretty-button>
+                    <pretty-button value="Danger" type="danger" onclick="myFunction">
+                    </pretty-button>
+                    <pretty-button value="Default" type="default" onclick="myFunction">
+                    </pretty-button>
+                    <pretty-button value="Dashed" type="dashed" onclick="myFunction">
+                    </pretty-button>
+                    <pretty-button value="Link" type="link" onclick="myFunction">
+                    </pretty-button>
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
 </div>
+
+<script type="text/javascript">
+    document.querySelectorAll('code > pretty-button > button').forEach(btn => {
+        btn.parentNode.removeChild(btn)
+    });
+    hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', document.querySelector('code.xml').innerHTML, 0 , 0).value
+</script>

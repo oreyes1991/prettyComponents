@@ -75,6 +75,8 @@ body {
 }
 .demo-layout > *{
 	place-self: center;
+	width: 79%;
+	height: 90%;
 }
 
 .basic-dropdown .props {
@@ -174,4 +176,8 @@ pretty-input > div{
 	padding: 15px;
 	background-color: #ffffff;
 	border-radius: 3px;
+}
+
+.hidden {
+	display: none;
 }

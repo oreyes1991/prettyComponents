@@ -15,6 +15,7 @@ pretty-modal[visible] > .modal-box {
 	visibility: visible;
 	opacity: 1;
 	transition: all .3s;
+	z-index: 1000;
 }
 
 pretty-modal[transparent] .modal-wrapper{
