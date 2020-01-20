@@ -1,9 +1,11 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
+import { validateStructure, getBody } from '../../../util';
 import './index.css';
 
 class MenuItem extends MetaComponent {
     constructor() {
         super();
+        this.body = getBody(this)
     }
     // eslint-disable-next-line class-method-use-this
     render() {
@@ -11,7 +13,7 @@ class MenuItem extends MetaComponent {
         return `
             <div class="p-menu-item-box">
                 ${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
-                ${ this.getBody() }
+                ${ this.body }
             </div>
         `
     }
@@ -19,6 +21,9 @@ class MenuItem extends MetaComponent {
     addListeners() {
         const item = this.querySelector('.p-menu-item-box');
         const { action, actionData, href } = this.getProps();
+        setInterval(() => {
+            validateStructure(this);
+        }, 1000);
         item.addEventListener('click', () => {
             item.classList.add('selected', 'new');
             global.storage.dispatch({ type: 'P_MENU_SELECTED', ev: {item: item.querySelector('svg + *'), that: this} })
@@ -38,12 +43,6 @@ class MenuItem extends MetaComponent {
             actionData: this.getAttribute('action-data') !== null ? this.getAttribute('action-data') : undefined,
             href: this.getAttribute('href') !== null ?  this.getAttribute('href') : undefined
         }
-    }
-
-    getBody() {
-        const b = this.innerHTML;
-        this.innerHTML = '';
-        return b;
     }
 }
 

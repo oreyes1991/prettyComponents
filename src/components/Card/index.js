@@ -1,14 +1,16 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
+import { getBody, validateStructure } from '../../util';
 import './index.css';
 
 class Card extends MetaComponent {
 	constructor () {
 		super ();
+		this.body = getBody(this, true);
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const { title, description, avatar } = this.getProps();
-		const body = this.getBody();
+		
 		return `
 			<div>
 				${
@@ -23,30 +25,16 @@ class Card extends MetaComponent {
 					<div class="description">${description}</div>
 				</div>
 				${
-					body !== ''
+					this.body !== ''
 					? `
 					<div class="body">
-						${body}
+						${this.body}
 					</div>
 					`
 					: ''
 				}
 			</div>
 		`
-	}
-	/**
-	 * get the component body
-	 */
-	getBody() {
-		const b = this.innerHTML.split('').map(ch => {
-			if (ch !== '\n' && ch !== '\t' && ch !== '  ' && ch !== '   ' && ch !== '    ')
-			{
-				return ch;
-			}
-			return '';
-		}).join('');
-		this.innerHTML = '';
-		return b.length > 3 ? b : '';
 	}
 	/**
 	 * get properties
@@ -69,7 +57,9 @@ class Card extends MetaComponent {
 	 * add DOM listeners
 	 */
 	addListeners() {
-
+		setTimeout(() => {
+			validateStructure(this);
+		}, 1000)
 	}
 }
 

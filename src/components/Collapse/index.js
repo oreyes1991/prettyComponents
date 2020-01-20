@@ -1,10 +1,11 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
+import { validateStructure, getBody } from '../../util';
 import './index.css';
 
 class Collapse extends MetaComponent {
 	constructor() {
 		super();
-		this.body = this.getBody();
+		this.body = getBody(this);
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
@@ -15,33 +16,9 @@ class Collapse extends MetaComponent {
 		`
 	}
 
-	validateStructure() {
-		const children = this.children
-		if (children.length > 1) {
-			console.log(children)
-			let child = '';
-			for(let i=0; i < children.length; i++) {
-				if (i !== 0) {
-					child += children[i].outerHTML
-				}
-			}
-			this.body = child;
-			this.innerHTML = this.render();
-		}
-	}
-
-	/**
-	 * get component body
-	 */
-	getBody() {
-		const b = this.innerHTML;
-		this.innerHTML = '';
-		return b;
-	}
-
 	addListeners() {
 		setTimeout(() => {
-			this.validateStructure();
+			validateStructure(this);
 		}, 1500)
 	}
 }

@@ -1,16 +1,18 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
+import { validateStructure, getBody } from '../../util';
 import './index.css';
 
 class Menu extends MetaComponent {
 	constructor() {
 		super(global.storage);
+		this.body = getBody(this);
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const props = this.getProps();
 		return `
 			<div class="p-menu-box" style="top: ${props.offsetTop}px">
-				${ this.getBody() }
+				${ this.body }
 			</div>
 		`
 	}
@@ -22,17 +24,17 @@ class Menu extends MetaComponent {
 		}
 	}
 
-	getBody() {
-		const b = this.innerHTML;
-		this.innerHTML = '';
-		return b;
-	}
-
 	toggleSelected() {
 		const newSel = this.querySelector('.p-menu-item-box.selected.new');
 		const prevSel = this.querySelector('.p-menu-item-box.selected:not(.new)');
 		if (prevSel !== null) prevSel.classList.remove('selected');
 		newSel.classList.remove('new');
+	}
+
+	addListeners() {
+		setTimeout(() => {
+			validateStructure(this)
+		}, 1000)
 	}
 
 	handleStoreEvents() {
