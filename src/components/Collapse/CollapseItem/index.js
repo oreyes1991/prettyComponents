@@ -62,7 +62,9 @@ class CollapseItem extends MetaComponent {
 	 * add DOM listeners
 	 */
 	addListeners() {
-		this.validateStructure();
+		setTimeout(() => {
+			this.validateStructure();
+		}, 1500)
 		this.querySelector('.collapse-header').addEventListener('click', () => {
 			if (this.getProps().expanded) {
 				this.removeAttribute("expanded");
