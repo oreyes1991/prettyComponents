@@ -49,12 +49,13 @@ class CollapseItem extends MetaComponent {
 		const children = this.children
 		if (children.length > 1) {
 			console.log(children)
-			this.body = children.map((el, i) => {
+			let child = '';
+			for(let i=0; i < children.length; i++) {
 				if (i !== 0) {
-					return el.outerHTML
+					child += children[i].outerHTML
 				}
-				return ''
-			}).join('')
+			}
+			this.body = child;
 			this.innerHTML = this.render();
 		}
 	}
@@ -64,7 +65,7 @@ class CollapseItem extends MetaComponent {
 	addListeners() {
 		setTimeout(() => {
 			this.validateStructure();
-		}, 1500)
+		}, 1000)
 		this.querySelector('.collapse-header').addEventListener('click', () => {
 			if (this.getProps().expanded) {
 				this.removeAttribute("expanded");
