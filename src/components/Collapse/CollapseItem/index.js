@@ -4,6 +4,7 @@ import './index.css';
 class CollapseItem extends MetaComponent {
 	constructor() {
 		super();
+		this.body = this.getBody();
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
@@ -16,7 +17,7 @@ class CollapseItem extends MetaComponent {
 				</div>
 				<div class="collapse-content">
 					<div>
-						${ this.getBody() }
+						${ this.body }
 					</div>
 				<div>
 			</div>

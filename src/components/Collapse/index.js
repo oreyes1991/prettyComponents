@@ -4,19 +4,20 @@ import './index.css';
 class Collapse extends MetaComponent {
 	constructor() {
 		super();
+		this.body = this.getBody();
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		return `
 			<div class="collapse-body">
-				${this.getBoddy()}
+				${this.body}
 			</div>
 		`
 	}
 	/**
 	 * get component body
 	 */
-	getBoddy() {
+	getBody() {
 		const b = this.innerHTML;
 		this.innerHTML = '';
 		return b;
