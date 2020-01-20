@@ -29,6 +29,7 @@ class CollapseItem extends MetaComponent {
 	getBody() {
 		const b = this.innerHTML;
 		this.innerHTML = '';
+		console.log('clean the DOM')
 		return b;
 	}
 	/**
@@ -43,10 +44,25 @@ class CollapseItem extends MetaComponent {
 			title, expanded
 		}
 	}
+
+	validateStructure() {
+		const children = this.children
+		if (children.length > 1) {
+			console.log(children)
+			this.body = children.map((el, i) => {
+				if (i !== 0) {
+					return el.outerHTML
+				}
+				return ''
+			}).join('')
+			this.innerHTML = this.render();
+		}
+	}
 	/**
 	 * add DOM listeners
 	 */
 	addListeners() {
+		this.validateStructure();
 		this.querySelector('.collapse-header').addEventListener('click', () => {
 			if (this.getProps().expanded) {
 				this.removeAttribute("expanded");

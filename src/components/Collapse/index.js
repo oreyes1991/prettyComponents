@@ -14,6 +14,21 @@ class Collapse extends MetaComponent {
 			</div>
 		`
 	}
+
+	validateStructure() {
+		const children = this.children
+		if (children.length > 1) {
+			console.log(children)
+			this.body = children.map((el, i) => {
+				if (i !== 0) {
+					return el.outerHTML
+				}
+				return ''
+			}).join('')
+			this.innerHTML = this.render();
+		}
+	}
+
 	/**
 	 * get component body
 	 */
@@ -21,6 +36,10 @@ class Collapse extends MetaComponent {
 		const b = this.innerHTML;
 		this.innerHTML = '';
 		return b;
+	}
+
+	addListeners() {
+		this.validateStructure();
 	}
 }
 
