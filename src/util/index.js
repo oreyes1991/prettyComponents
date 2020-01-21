@@ -8,8 +8,8 @@ export function validateStructure(that, contentClass) {
 				that.removeChild(children[i])
 			}
 		}
+		that.querySelector(contentClass).innerHTML = chld;
 	}
-	that.querySelector(contentClass).innerHTML = chld;
 }
 
 export function getBody(that, empty) {
