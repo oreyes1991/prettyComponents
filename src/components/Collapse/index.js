@@ -18,7 +18,7 @@ class Collapse extends MetaComponent {
 
 	addListeners() {
 		setTimeout(() => {
-			validateStructure(this);
+			validateStructure(this, '.collapse-body');
 		}, 1500)
 	}
 }

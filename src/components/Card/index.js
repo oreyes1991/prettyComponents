@@ -58,7 +58,7 @@ class Card extends MetaComponent {
 	 */
 	addListeners() {
 		setTimeout(() => {
-			validateStructure(this);
+			validateStructure(this, '.body');
 		}, 1000)
 	}
 }

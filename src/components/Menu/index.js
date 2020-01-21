@@ -33,7 +33,7 @@ class Menu extends MetaComponent {
 
 	addListeners() {
 		setTimeout(() => {
-			validateStructure(this)
+			validateStructure(this, '.p-menu-box')
 		}, 1000)
 	}
 
