@@ -32,12 +32,11 @@ class Button extends MetaComponent {
 	 */
 	constructor () {
 		super(global.storage);
-		this.props = this.getProps();
 	}
 	// eslint-disable-next-line class-method-use-this
 	render () {
 		this.innerHTML = '';
-		
+		this.props = this.getProps();
 		return `
 			<button ${ this.props.id } type="button"> ${ this.props.value } </button>
 		`;
