@@ -34,6 +34,7 @@ class Modal extends MetaComponent {
 		if (submitBtn !== null) {
 			submitBtn.addEventListener('click', () => {
 				//TODO: custom submit callback
+				global.storage.dispatch({ type: 'P-MODAL-SUBMIT', modal: this })
 			})
 		}
 	}
