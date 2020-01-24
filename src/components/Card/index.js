@@ -1,5 +1,5 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
-import { getBody, validateStructure } from '../../util';
+import { getBody } from '../../util';
 import './index.css';
 
 class Card extends MetaComponent {
@@ -52,14 +52,6 @@ class Card extends MetaComponent {
 		return {
 			title, avatar, description
 		}
-	}
-	/**
-	 * add DOM listeners
-	 */
-	addListeners() {
-		setTimeout(() => {
-			validateStructure(this, '.body');
-		}, 1000)
 	}
 }
 

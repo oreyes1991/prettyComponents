@@ -1,5 +1,5 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
-import { validateStructure, getBody } from '../../../util';
+import { getBody } from '../../../util';
 import './index.css';
 
 class MenuItem extends MetaComponent {
@@ -21,9 +21,6 @@ class MenuItem extends MetaComponent {
 	addListeners() {
 		const item = this.querySelector('.p-menu-item-box');
 		const { action, actionData, href } = this.getProps();
-		setInterval(() => {
-			validateStructure(this, 'p-menu-item-box');
-		}, 1000);
 		item.addEventListener('click', () => {
 			item.classList.add('selected', 'new');
 			global.storage.dispatch({ type: 'P_MENU_SELECTED', ev: {item: item.querySelector('svg + *'), that: this} })

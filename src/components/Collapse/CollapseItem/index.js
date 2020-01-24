@@ -1,5 +1,5 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
-import { validateStructure, getBody } from '../../../util';
+import { getBody } from '../../../util';
 import './index.css';
 
 class CollapseItem extends MetaComponent {
@@ -41,9 +41,6 @@ class CollapseItem extends MetaComponent {
 	 * add DOM listeners
 	 */
 	addListeners() {
-		setTimeout(() => {
-			validateStructure(this, '.collapse-content');
-		}, 1000)
 		this.querySelector('.collapse-header').addEventListener('click', () => {
 			if (this.getProps().expanded) {
 				this.removeAttribute("expanded");

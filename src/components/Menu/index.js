@@ -1,5 +1,5 @@
 import { MetaComponent } from '@rebelstack-io/metaflux';
-import { validateStructure, getBody } from '../../util';
+import { getBody } from '../../util';
 import './index.css';
 
 class Menu extends MetaComponent {
@@ -31,11 +31,6 @@ class Menu extends MetaComponent {
 		newSel.classList.remove('new');
 	}
 
-	addListeners() {
-		setTimeout(() => {
-			validateStructure(this, '.p-menu-box')
-		}, 1000)
-	}
 
 	handleStoreEvents() {
 		return {
