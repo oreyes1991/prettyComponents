@@ -4,6 +4,8 @@
 	border-radius: 3px;
 	background-color: #ffffff;
 	position: relative;
+	max-width: 80vw;
+    box-sizing: border-box;
 }
 
 .props {
@@ -32,9 +34,11 @@
 	width: fit-content;
 }
 
+body, html {
+	height: 100%;
+}
 
 body {
-	height: 100vh;
 	background: #303030;
 }
 
@@ -48,7 +52,7 @@ body {
 	grid-template-columns: 64px 1fr 35px;
 	column-gap: 10px;
 	position: fixed;
-	width: 99%;
+	width: 99vw;
 	z-index: 100000;
 	top: 0;
 }
@@ -64,14 +68,12 @@ body {
 
 .demo-layout {
 	display: grid;
-    grid-template-columns: 1fr;
-    padding: 1em 0;
-    margin: 0 1em;
-    border-radius: 0 0 4px 0;
-    grid-row-gap: 10px;
-    margin-left: 255px;
-    margin-top: 85px;
-    height: 87vh;
+	grid-template-columns: 1fr;
+	border-radius: 0 0 4px 0;
+	grid-row-gap: 10px;
+	padding-top: 85px;
+	height: 100%;
+	box-sizing: border-box;
 }
 .demo-layout > *{
 	place-self: center;
@@ -176,6 +178,8 @@ pretty-input > div{
 	padding: 15px;
 	background-color: #ffffff;
 	border-radius: 3px;
+	max-width: 80vw;
+	box-sizing: border-box;
 }
 
 .hidden {

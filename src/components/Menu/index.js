@@ -12,9 +12,24 @@ class Menu extends MetaComponent {
 		const props = this.getProps();
 		return `
 			<div class="p-menu-box" style="top: ${props.offsetTop}px">
+				<div class="p-mobile-only">
+					<i class="fas fa-bars"></i>
+				</div>
 				${ this.body }
 			</div>
 		`
+	}
+
+	addListeners() {
+		const toggler = this.querySelector('.p-mobile-only');
+		toggler.addEventListener('click',() => {
+			this.classList.toggle('p-mobile-toggled')
+			if(this.classList.contains('p-mobile-toggled')) {
+				toggler.innerHTML = `<i class="fas fa-times"></i>`
+			} else {
+				toggler.innerHTML = `<i class="fas fa-bars"></i>`
+			}
+		})
 	}
 
 	getProps() {

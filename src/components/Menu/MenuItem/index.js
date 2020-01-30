@@ -11,7 +11,7 @@ class MenuItem extends MetaComponent {
 	render() {
 		const props = this.getProps();
 		return `
-			<div class="p-menu-item-box">
+			<div class="p-menu-item-box${props.selected ? ' selected': ''}">
 				${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
 				${ this.body }
 			</div>
@@ -34,11 +34,14 @@ class MenuItem extends MetaComponent {
 	}
 
 	getProps() {
+		const selected = this.getAttribute('selected') !== null;
+		this.removeAttribute('selected');
 		return {
 			icon: this.getAttribute('icon') !== null ? this.getAttribute('icon') : '',
 			action: this.getAttribute('action') !== null ? this.getAttribute('action') : undefined,
 			actionData: this.getAttribute('action-data') !== null ? this.getAttribute('action-data') : undefined,
-			href: this.getAttribute('href') !== null ?  this.getAttribute('href') : undefined
+			href: this.getAttribute('href') !== null ?  this.getAttribute('href') : undefined,
+			selected
 		}
 	}
 }

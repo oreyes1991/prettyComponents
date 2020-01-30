@@ -21,4 +21,68 @@ pretty-menu > .p-menu-box {
     position: fixed;
     left: 0;
     top: 0;
+    transition: all .3s ease-in-out;
+}
+pretty-menu::after {
+    content: "";
+    float: left;
+    min-width: 250px;
+    height: 100%;
+}
+
+pretty-menu .p-mobile-only {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -38px;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 0 4px 4px 0px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+pretty-menu .p-mobile-only:hover {
+    color: var(--primary-bg-hv);
+    transform: scale(1.1, 1);
+}
+
+@media only screen and (max-width: 600px) { 
+    pretty-menu .p-mobile-only {
+        display: grid;
+    }
+
+    pretty-menu > .p-menu-box {
+        transform: translate(-100%);
+    }
+
+    pretty-menu::after {
+        transform: translate(-100%, 0px);
+        position: absolute;
+    }
+
+    pretty-menu.p-mobile-toggled::after {
+        transform: translate(0%);
+        position: relative;
+    }
+
+    pretty-menu.p-mobile-toggled::before {
+        content: "";
+        position: fixed;
+        right: 0;
+        left: 250px;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.65);
+        bottom: 0;
+        top: 0;
+    }
+
+    pretty-menu.p-mobile-toggled > .p-menu-box {
+        transform: translate(0%);
+    }
+
+    pretty-menu.p-mobile-toggled + * {
+        overflow-x: hidden;
+    }
+
 }
