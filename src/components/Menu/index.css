@@ -64,6 +64,7 @@ pretty-menu .p-mobile-only:hover {
     pretty-menu.p-mobile-toggled::after {
         transform: translate(0%);
         position: relative;
+        z-index: -1;
     }
 
     pretty-menu.p-mobile-toggled::before {
@@ -83,6 +84,8 @@ pretty-menu .p-mobile-only:hover {
 
     pretty-menu.p-mobile-toggled + * {
         overflow-x: hidden;
+        position: relative;
+        z-index: -1;
     }
 
 }
