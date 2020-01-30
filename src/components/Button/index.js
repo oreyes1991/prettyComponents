@@ -10,8 +10,9 @@ class Button extends MetaComponent {
 		const customCallback = this.props.onclick;
 		if (customCallback) {
 			this.addEventListener(
-				'click',
-				window[customCallback]
+				'click',() => {
+					window[customCallback](this)
+				},
 			);
 		}
 		if (this.props.href) {

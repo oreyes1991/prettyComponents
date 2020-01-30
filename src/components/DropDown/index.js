@@ -18,8 +18,8 @@ class DropDown extends MetaComponent {
 			this.targetListener(target);
 		}
 		if (changeFunct !== null) {
-			document.querySelectorAll('pretty-dropdown > *')
-			.forEach(el => {
+			for (let i=0; i < this.children.length; i++) {
+				const el = this.children.item(i);
 				if (!el.classList.contains('p-menu-divider') &&
 					el.getAttribute('disabled') === null
 				) {
@@ -28,7 +28,7 @@ class DropDown extends MetaComponent {
 						this.classList.toggle('p-hidden');
 					})
 				}
-			})
+			}
 		}
 	}
 	/**

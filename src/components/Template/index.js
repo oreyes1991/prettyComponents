@@ -4,6 +4,7 @@ import './index.css';
 class Template extends MetaComponent {
 	constructor() {
 		super(global.storage);
+		this.props = this.getProps();
 	}
 
 	//eslint-disable-next-line class-method-use-this
@@ -21,6 +22,7 @@ class Template extends MetaComponent {
 		let observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
 				if (mutation.type == "attributes") {
+					this.props = this.getProps();
 					this.innerHTML = this.render();
 				}
 			});
@@ -34,20 +36,20 @@ class Template extends MetaComponent {
 	 * 
 	 */
 	 getHTMLString() {
-		const { src } = this.getProps();
-		if (src) {
-			let charArr = src.split('');
+		if (this.props.src) {
+			let charArr = this.props.src.split('');
 			if (charArr.pop() === '/') {
-				this.getHtmlFile(src + '/index.html');
-				this.getFile(src + 'index.css', 'css');
-				this.getFile(src + 'index.js', 'js');
+				if (!this.props.styleless) {
+					this.getFile(this.props.src + 'index.css', 'css');
+				}
+				this.getHtmlFile(this.props.src + '/index.html');
 			} else {
-				this.getHtmlFile(src)
+				this.getHtmlFile(this.props.src)
 			}
 		}
 	}
 	/**
-	 * 
+	 * Fetch HTML
 	 * @param {String} src 
 	 */
 	getHtmlFile(src) {
@@ -59,13 +61,14 @@ class Template extends MetaComponent {
 		}).then((response) => {
 			response.text().then((html) => {
 				this.writeHTML(html);
+				this.storage.dispatch({ type: 'P-TEMPLATE-HTML-LOADED', that: this })
 			})
 		}).catch((err) => {
 			console.err('Pretty-template error: ',err)
 		});
 	}
 	/**
-	 * 
+	 * Fetch file (css or js)
 	 * @param {String} src 
 	 */
 	getFile(src, type) {
@@ -75,10 +78,11 @@ class Template extends MetaComponent {
 				res.text().then(text => {
 					if (type === 'css') {
 						const styles = document.createElement('style');
+						styles.setAttribute('p-src', src)
 						styles.innerHTML = text;
-						this.querySelector('.p-template-box').appendChild(styles)
+						this.injectStyles(styles, src);
 					} else {
-						eval(text)
+						this.injectScript(src);
 					}
 				})
 			}
@@ -88,24 +92,66 @@ class Template extends MetaComponent {
 		})
 	}
 	/**
+	 * inject script tag at the end of the document
+	 */
+	injectScript(src) {
+		const tag = document.querySelector(`script[src="${src}"]`);
+		if(tag === null) {
+			const sctTag = document.createElement('script');
+			sctTag.setAttribute('src', src);
+			document.body.appendChild(sctTag);
+		}
+	}
+	/**
+	 * inject each view styles, once
+	 * @param {HTMLElement} styles 
+	 * @param {String} src 
+	 */
+	injectStyles(styles, src) {
+		if (document.querySelector(`style[p-src="${src}"`) !== null) {
+			document.querySelector(`style[p-src="${src}"`).innerHTML = styles.innerHTML;
+		} else {
+			document.body.appendChild(styles);
+		}
+	}
+	/**
 	 * 
 	 * @param {String} html 
 	 */
 	writeHTML(html) {
 		this.querySelector('.p-template-box').innerHTML = html;
-		this.querySelectorAll('.p-template-box script').forEach(sc => {
-			eval(sc.innerHTML);
-		})
+		if (!this.props.scriptless) {
+			this.querySelectorAll('.p-template-box script').forEach(sc => {
+				eval(sc.innerHTML);
+			})
+		}
+		if (this.props.styleless) {
+			this.querySelectorAll('.p-template-box style').forEach(st => {
+				st.innerHTML = '';
+			})
+		}
 	}
-
+	/**
+	 * get attritbutes
+	 * @returns {*} {src: String, scriptless: Boolean, styleless: Boolean}
+	 */
 	getProps() {
 		return {
-			src: this.getAttribute('src') !== null ? this.getAttribute('src') : undefined
+			src: this.getAttribute('src') !== null ? this.getAttribute('src') : undefined,
+			scriptless: this.getAttribute('scriptless') !== null,
+			styleless: this.getAttribute('styleless') !== null
 		}
 	}
 
 	handleStoreEvents() {
 		return {
+			'P-TEMPLATE-HTML-LOADED': (action) => {
+				const { that } = action;
+				const { src, scriptless } = that.getProps();
+				if (!scriptless) {
+					that.getFile(src + 'index.js', 'js');
+				}
+			}
 		}
 	}
 

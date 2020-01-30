@@ -11,24 +11,6 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<title>&lt;Pretty/&gt;</title>
 	<script>
-		function myFunction(e) {
-			const type = e.target.parentNode.getAttribute('type');
-			alert('you press: '+ type + ' Button');
-		}
-		function changeFunc(e) {
-			alert('click on ' + e.innerHTML);
-		}
-		function placement(e, ...params) {
-			const el = params[1]; // dropdown
-			el.setAttribute('placement', e.innerHTML);
-		}
-		function onSelect(selected, that, ev) {
-			if (selected) {
-				alert('Select ' + that.name)
-			} else {
-				alert('Unselect ' + that.name)
-			}
-		}
 		document.addEventListener('DOMContentLoaded', () => {
 			document.querySelector('.demo-head > .demo-gh').addEventListener('click',
 			() => {
@@ -40,18 +22,7 @@
 				.setAttribute('src', root + action.data)
 			})
 		});
-		function openModal() {
-			document.querySelector('#basic-modal').open();
-		}
-		function openFootLessModal() {
-			document.querySelector('#fooless-modal').open();
-		}
-		function openCustomFooterModal() {
-			document.querySelector('#custom-modal').open();
-		}
-		function openTransparentModal() {
-			document.querySelector('#transparent-modal').open();
-		}
+		
 	</script>
 	<!--<script src="./js/codepen.js"></script>
 	<script src="./js/tags.js"></script>-->
@@ -81,7 +52,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/button/index.html"
+			action-data="views/button/"
 		>
 			<div id="p-btns">
 				Buttons
@@ -89,7 +60,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/dropdown/index.html"
+			action-data="views/dropdown/"
 		>
 			<div id="p-dropdown">
 				Dropdowns
@@ -97,7 +68,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/input/index.html"
+			action-data="views/input/"
 		>
 			<div id="p-input">
 				Inputs
@@ -105,7 +76,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/inputnumber/index.html"
+			action-data="views/inputnumber/"
 		>
 			<div id="p-inputnumber">
 				Input Number
@@ -113,7 +84,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/tag/index.html"
+			action-data="views/tag/"
 		>
 			<div id="p-tag">
 				Tags
@@ -121,7 +92,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/card/index.html"
+			action-data="views/card/"
 		>
 			<div id="p-card">
 				Cards
@@ -129,7 +100,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/collapse/index.html"
+			action-data="views/collapse/"
 		>
 			<div id="p-collapse">
 				Collapse
@@ -137,7 +108,7 @@
 		</pretty-menu-item>
 		<pretty-menu-item
 			action="change-view" 
-			action-data="views/modal/index.html"
+			action-data="views/modal/"
 		>
 			<div id="p-modal">
 				Modal
@@ -145,7 +116,7 @@
 		</pretty-menu-item>
 	</pretty-menu>
 	<div class="demo-layout">
-		<pretty-template src="views/default/index.html">
+		<pretty-template styleless src="views/default/">
 
 		</pretty-template>
 	</div>
