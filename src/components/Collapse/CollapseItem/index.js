@@ -5,24 +5,42 @@ import './index.css';
 class CollapseItem extends MetaComponent {
 	constructor() {
 		super();
-		this.body = getBody(this);
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const props = this.getProps ();
-		return `
-			<div class="collapse-item">
-				<div class="collapse-header">
-					<i class="fas fa-chevron-down"></i>
-					<h3>${ props.title }</h3>
-				</div>
-				<div class="collapse-content">
-					<div>
-						${ this.body }
-					</div>
-				<div>
+		this.body = getBody(this);
+		let bool = this.body.match(new RegExp('\"collapse-item\"')) !== null
+		return !bool
+			? this.getHTMLText(props.title, this.body)
+			: this.correctStructure(this.body);
+	}
+	/**
+	 * get Layout
+	 */
+	getHTMLText(title, body) {
+		return `<div class="collapse-item">
+		<div class="collapse-header">
+			<i class="fas fa-chevron-down"></i>
+			<h3>${ title }</h3>
+		</div>
+		<div class="collapse-content">
+			<div>
+				${ body }
 			</div>
-		`
+		<div>
+		</div>`
+	}
+	/**
+	 * 
+	 * @param {HTMLElement} body 
+	 */
+	correctStructure(body) {
+		const props = this.getProps ();
+		const tmp = document.createElement('div');
+		tmp.innerHTML = body;
+		console.log(tmp.children)
+		return this.getHTMLText(props.title, tmp.children[1].outerHTML)
 	}
 	/**
 	 * get component properties
