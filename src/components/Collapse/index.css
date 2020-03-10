@@ -20,3 +20,9 @@ pretty-collapse[borderless] .collapse-body {
 	background-color: #fff;
 	border: 0;
 }
+
+@media only screen and (max-width: 600px) {  
+	.collapse-content > div {
+		padding: 5px;
+	}
+}

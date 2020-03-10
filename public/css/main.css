@@ -5,7 +5,10 @@
 	background-color: #ffffff;
 	position: relative;
 	max-width: 80vw;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	width: 65vw;
+	height: 80vh;
+	overflow-y: auto;
 }
 
 .props {

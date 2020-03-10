@@ -2,50 +2,30 @@
 <div class="basic-buttons demo-box">
 	<h3> Basic Buttons </h3>
 		<pretty-button 
-		<pretty-button 
-		<pretty-button 
-		value="Primary" 
-		value="Primary" 
 		value="Primary" 
 		type="primary"
 		onclick="myFunction"
 	>
 	</pretty-button>
 	<pretty-button 
-	<pretty-button 
-	<pretty-button 
-		value="Danger" 
-		value="Danger" 
 		value="Danger" 
 		type="danger"
 		onclick="myFunction"
 	>
 	</pretty-button>
 	<pretty-button 
-	<pretty-button 
-	<pretty-button 
-		value="Default" 
-		value="Default" 
 		value="Default" 
 		type="default"
 		onclick="myFunction"
 	>
 	</pretty-button>
 	<pretty-button 
-	<pretty-button 
-	<pretty-button 
-		value="Dashed" 
-		value="Dashed" 
 		value="Dashed" 
 		type="dashed"
 		onclick="myFunction"
 	>
 	</pretty-button>
 	<pretty-button 
-	<pretty-button 
-	<pretty-button 
-		value="Link" 
-		value="Link" 
 		value="Link" 
 		type="link"
 		href="https://github.com/rebelstackio/prettyComponents" target="_blank"
@@ -90,10 +70,13 @@
 </div>
 
 <script type="text/javascript">
-	document.querySelectorAll('code > pretty-button > button').forEach(btn => {
-		btn.parentNode.removeChild(btn)
-	});
+	const text = `<pretty-button value="Primary" type="primary"onclick="myFunction"></pretty-button>
+<pretty-button value="Danger" type="danger" onclick="myFunction"></pretty-button>
+<pretty-button value="Default" type="default" onclick="myFunction"></pretty-button>
+<pretty-button value="Dashed" type="dashed" onclick="myFunction"></pretty-button>
+<pretty-button value="Link" type="link" href="https://github.com/rebelstackio/prettyComponents" target="_blank"></pretty-button>
+	`
 	hljs.initHighlighting();
 	hljs.configure()
-	document.querySelector('code.xml').innerHTML = hljs.highlight('html', document.querySelector('code.xml').innerHTML, 0 , 0).value
+	document.querySelector('code.xml').innerHTML = hljs.highlight('html', text, 0 , 0).value
 </script>

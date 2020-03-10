@@ -39,7 +39,7 @@ class Button extends MetaComponent {
 		this.innerHTML = '';
 		this.props = this.getProps();
 		return `
-			<button ${ this.props.id } type="button"> ${ this.props.value } </button>
+			<button ${ this.props.id } type="button"> ${ this.props.value || this.props.icon } </button>
 		`;
 	}
 
@@ -50,12 +50,14 @@ class Button extends MetaComponent {
 		const href = this.getAttribute('href');
 		const onClick = this.getAttribute('onclick');
 		const target = this.getAttribute('target');
+		const icon = this.getAttribute('icon');
 		return {
-			value: value !== null ? value : 'value',
+			value: value !== null ? value : '',
 			id,
 			href: href !== null ? href : false,
 			onclick: onClick !== null ? onClick : false,
-			target: target !== null ? target : false
+			target: target !== null ? target : false,
+			icon: icon !== null ? `<i class="${icon}"></i>` : false
 		}
 	}
 

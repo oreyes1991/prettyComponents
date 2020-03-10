@@ -148,8 +148,11 @@ class Template extends MetaComponent {
 			'P-TEMPLATE-HTML-LOADED': (action) => {
 				const { that } = action;
 				const { src, scriptless } = that.getProps();
-				if (!scriptless) {
-					that.getFile(src + 'index.js', 'js');
+				let charArr = src.split('');
+				if (charArr.pop() === '/') {
+					if (!scriptless) {
+						that.getFile(src + 'index.js', 'js');
+					}
 				}
 			}
 		}
