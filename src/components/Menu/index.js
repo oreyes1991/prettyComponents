@@ -10,13 +10,31 @@ class Menu extends MetaComponent {
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const props = this.getProps();
-		return `
+		let bool = this.body.match(new RegExp('\"p-menu-box\"')) !== null
+		return !bool ? `
 			<div class="p-menu-box" style="top: ${props.offsetTop}px">
 				<div class="p-mobile-only">
 					<i class="fas fa-bars"></i>
 				</div>
 				${ this.body }
 			</div>
+		` : this.correctStructure(this.body);
+	}
+	/**
+	 * Fix double rendering
+	 * @param {*} body 
+	 */
+	correctStructure(body) {
+		const props = this.getProps()
+		const temp = document.createElement('div');
+		temp.innerHTML = body;
+		return `
+		<div class="p-menu-box" style="top: ${props.offsetTop}px">
+		<div class="p-mobile-only">
+			<i class="fas fa-bars"></i>
+		</div>
+			${ tmp.children[1].outerHTML }
+		</div>
 		`
 	}
 

@@ -10,11 +10,27 @@ class MenuItem extends MetaComponent {
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		const props = this.getProps();
-		return `
+		let bool = this.body.match(new RegExp('\"p-menu-item-box\"')) !== null
+		return !bool ? `
 			<div class="p-menu-item-box${props.selected ? ' selected': ''}">
 				${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
 				${ this.body }
 			</div>
+		` : this.correctStructure(this.body);
+	}
+	/**
+	 * Fix Double Rendering
+	 * @param {String} body 
+	 */
+	correctStructure(body) {
+		const tmp = document.createElement('div');
+		const props = this.getProps();
+		tmp.innerHTML = body;
+		return `
+		<div class="p-menu-item-box${props.selected ? ' selected': ''}">
+			${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
+			${ tmp.children[1].outerHTML }
+		</div>
 		`
 	}
 

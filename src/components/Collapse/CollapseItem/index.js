@@ -39,7 +39,6 @@ class CollapseItem extends MetaComponent {
 		const props = this.getProps ();
 		const tmp = document.createElement('div');
 		tmp.innerHTML = body;
-		console.log(tmp.children)
 		return this.getHTMLText(props.title, tmp.children[1].outerHTML)
 	}
 	/**
