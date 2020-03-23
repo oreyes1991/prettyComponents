@@ -23,6 +23,7 @@ class MenuItem extends MetaComponent {
 	 * @param {String} body 
 	 */
 	correctStructure(body) {
+		console.log('menu item ==>', body)
 		const tmp = document.createElement('div');
 		const props = this.getProps();
 		tmp.innerHTML = body;

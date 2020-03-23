@@ -28,6 +28,7 @@ class Menu extends MetaComponent {
 		const props = this.getProps()
 		const temp = document.createElement('div');
 		temp.innerHTML = body;
+		console.log('menu item ==>', body)
 		return `
 		<div class="p-menu-box" style="top: ${props.offsetTop}px">
 		<div class="p-mobile-only">
