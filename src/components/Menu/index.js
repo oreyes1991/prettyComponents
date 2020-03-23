@@ -5,12 +5,13 @@ import './index.css';
 class Menu extends MetaComponent {
 	constructor() {
 		super(global.storage);
-		this.body = getBody(this);
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
+		this.body = getBody(this);
 		const props = this.getProps();
 		let bool = this.body.match(new RegExp('\"p-menu-box\"')) !== null
+		console.log('menu render ==> ', bool, this.body.match(new RegExp('\"p-menu-box\"')) , this.body)
 		return !bool ? `
 			<div class="p-menu-box" style="top: ${props.offsetTop}px">
 				<div class="p-mobile-only">
@@ -28,7 +29,7 @@ class Menu extends MetaComponent {
 		const props = this.getProps()
 		const temp = document.createElement('div');
 		temp.innerHTML = body;
-		console.log('menu item ==>', body)
+		console.log('menu ==>', body)
 		return `
 		<div class="p-menu-box" style="top: ${props.offsetTop}px">
 		<div class="p-mobile-only">

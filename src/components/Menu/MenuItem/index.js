@@ -5,12 +5,13 @@ import './index.css';
 class MenuItem extends MetaComponent {
 	constructor() {
 		super();
-		this.body = getBody(this)
 	}
 	// eslint-disable-next-line class-method-use-this
 	render() {
+		this.body = getBody(this);
 		const props = this.getProps();
 		let bool = this.body.match(new RegExp('\"p-menu-item-box\"')) !== null
+		console.log('menu render ==> ', bool, this.body.match(new RegExp('\"p-menu-item-box\"')) , this.body)
 		return !bool ? `
 			<div class="p-menu-item-box${props.selected ? ' selected': ''}">
 				${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
