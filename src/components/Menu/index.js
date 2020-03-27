@@ -11,7 +11,6 @@ class Menu extends MetaComponent {
 		this.body = getBody(this);
 		const props = this.getProps();
 		let bool = this.body.match(new RegExp('\"p-menu-box\"')) !== null
-		console.log('menu render ==> ', bool, this.body.match(new RegExp('\"p-menu-box\"')) , this.body)
 		return !bool ? `
 			<div class="p-menu-box" style="top: ${props.offsetTop}px">
 				<div class="p-mobile-only">
@@ -60,9 +59,12 @@ class Menu extends MetaComponent {
 	}
 
 	toggleSelected() {
-		const newSel = this.querySelector('.p-menu-item-box.selected.new');
-		const prevSel = this.querySelector('.p-menu-item-box.selected:not(.new)');
-		if (prevSel !== null) prevSel.classList.remove('selected');
+		const newSel = this.querySelector('.selected.new');
+		const prevSel = this.querySelector('.selected:not(.new)');
+		if (prevSel !== null) {
+			prevSel.classList.remove('selected');
+			prevSel.parentElement.removeAttribute('selected')
+		}
 		newSel.classList.remove('new');
 	}
 
@@ -72,6 +74,7 @@ class Menu extends MetaComponent {
 			'P_MENU_SELECTED': (action) => {
 				const { onChange } = this.getProps();
 				this.toggleSelected();
+				action.ev.that.setAttribute('selected', '');
 				if (onChange) {
 					window[onChange](action.ev.item, action.ev.that)
 				}

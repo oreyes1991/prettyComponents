@@ -27,7 +27,7 @@ pretty-menu::after {
     content: "";
     float: left;
     min-width: 250px;
-    height: 100%;
+    height: 100vh;
 }
 
 pretty-menu .p-mobile-only {

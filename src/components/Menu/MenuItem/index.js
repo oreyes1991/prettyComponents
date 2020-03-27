@@ -6,12 +6,20 @@ class MenuItem extends MetaComponent {
 	constructor() {
 		super();
 	}
+
+	set selected(bool) {
+		if(bool) {
+			this.setAttribute('selected', '');
+		} else {
+			this.removeAttribute('selected');
+		}
+	}
+
 	// eslint-disable-next-line class-method-use-this
 	render() {
 		this.body = getBody(this);
 		const props = this.getProps();
 		let bool = this.body.match(new RegExp('\"p-menu-item-box\"')) !== null
-		console.log('menu render ==> ', bool, this.body.match(new RegExp('\"p-menu-item-box\"')) , this.body)
 		return !bool ? `
 			<div class="p-menu-item-box${props.selected ? ' selected': ''}">
 				${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
@@ -24,14 +32,15 @@ class MenuItem extends MetaComponent {
 	 * @param {String} body 
 	 */
 	correctStructure(body) {
-		console.log('menu item ==>', body)
+		console.log('menu item corrected ==>', body)
 		const tmp = document.createElement('div');
 		const props = this.getProps();
 		tmp.innerHTML = body;
+		this.innerHTML = '';
 		return `
 		<div class="p-menu-item-box${props.selected ? ' selected': ''}">
 			${ props.icon ? `<i class="${props.icon}"></i>` : '<svg></svg>' }
-			${ tmp.children[1].outerHTML }
+			${ tmp.querySelector('.p-menu-item-box > *:not(svg)').outerHTML }
 		</div>
 		`
 	}

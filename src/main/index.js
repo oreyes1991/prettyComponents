@@ -15,6 +15,7 @@ import '../components/Menu/MenuItem';
 import '../components/Template';
 import '../components/Layout';
 import '../components/DatePicker';
+import '../components/Menu/MenuGroup';
 import '@fortawesome/fontawesome-free/js/all';
 
 window.FontAwesomeConfig = { autoReplaceSvg: false }
