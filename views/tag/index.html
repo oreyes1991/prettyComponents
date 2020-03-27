@@ -1,0 +1,79 @@
+<div class="basic-tag demo-box">
+    <h3> Basic Tag </h3>
+    <div class="static-tags">
+        <pretty-tag value="Basic Tag"></pretty-tag>
+        <pretty-tag value="Tag with icon" icon="fas fa-biking"></pretty-tag>
+    </div>
+    <label> Selectable </label>
+    <div class="selectable">
+        <pretty-tag selectable onselect="onSelect" class="selected" value="Tag 1"></pretty-tag>
+        <pretty-tag selectable onselect="onSelect" value="Tag 2"></pretty-tag>
+        <pretty-tag selectable onselect="onSelect" value="Tag 3"></pretty-tag>
+        <pretty-tag selectable onselect="onSelect" value="Tag 4"></pretty-tag>
+    </div>
+    <label>Closables</label>
+    <div class="dynamic-tags">
+
+    </div>
+    <div class="props">
+        <h4> Attributes </h4>
+        <div>
+            <h5> value </h5>
+            <div> value/name </div>
+        </div>
+        <div>
+            <h5> close </h5>
+            <div> boolean </div>
+            <p>set type to closable tag</p>
+        </div>
+        <div>
+            <h5> onclose </h5>
+            <div> Callback </div>
+            <p>callback on close event</p>
+        </div>
+        <div>
+            <h5> selectable </h5>
+            <div> boolean </div>
+            <p>set type to selectable tag</p>
+        </div>
+        <div>
+            <h5> onselect </h5>
+            <div> Callback </div>
+            <p>callback on close event</p>
+        </div>
+        <div>
+            <h5> loading </h5>
+            <div> boolean </div>
+            <p> loading state </p>
+        </div>
+        <div>
+            <h5> icon </h5>
+            <div> FA-font class </div>
+            <p> Font awesome class </p>
+        </div>
+    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
+</div>
+
+
+<script>
+    const exTXT = `
+    <pretty-tag value="Basic Tag"></pretty-tag>
+    <pretty-tag value="Tag with icon" icon="fas fa-biking"></pretty-tag>
+    <pretty-tag selectable onselect="onSelect" class="selected" value="Tag 1"></pretty-tag>
+    <pretty-tag selectable onselect="onSelect" value="Tag 2"></pretty-tag>
+    <pretty-tag selectable onselect="onSelect" value="Tag 3"></pretty-tag>
+    <pretty-tag selectable onselect="onSelect" value="Tag 4"></pretty-tag>
+    `;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

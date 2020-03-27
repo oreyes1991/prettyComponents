@@ -1,0 +1,71 @@
+<div class="basic-dropdown demo-box">
+    <h3> Basic DropDown </h3>
+        <pretty-button value="DropDown" id="my-target"></pretty-button>
+        <pretty-button type="dashed" value="Placement" id="placement">
+
+        </pretty-button>
+        <pretty-dropdown target="my-target" onchange="changeFunc">
+            <div class="p-menu-item">
+                1st Menu Item
+            </div>
+            <div class="p-menu-divider"></div>
+            <div class="p-menu-item">
+                2nd Menu Item
+            </div>
+            <div class="p-menu-item" disabled>
+                3nd Menu Item
+            </div>
+        </pretty-dropdown>
+        <pretty-dropdown target="placement" onchange="placement">
+            <div class="p-menu-item">bottom-left</div>
+            <div class="p-menu-item">bottom-center</div>
+            <div class="p-menu-item" >bottom-right</div>
+            <div class="p-menu-divider"></div>
+            <div class="p-menu-item">top-left</div>
+            <div class="p-menu-item">top-center</div>
+            <div class="p-menu-item">top-right</div>
+        </pretty-dropdown>
+        <div class="props">
+            <h4> Attributes </h4>
+            <div>
+                <h5> target </h5>
+                <div> id-target </div>
+            </div>
+            <div>
+                <h5> onchange </h5>
+                <div> functionName </div>
+                <p> Callback function will be trigger on change </p>
+            </div>
+        </div>
+        <pretty-collapse borderless>
+            <pretty-collapse-item title="Code Example">
+                <pre>
+                    <code class="xml hljs">
+                        
+                    </code>
+                </pre>
+            </pretty-collapse-item>
+        </pretty-collapse>
+</div>
+
+<script>
+    const exTXT = `
+    <!-- target element -->
+    <pretty-button value="DropDown" id="my-target"></pretty-button>
+    <!-- dropdown -->
+    <pretty-dropdown target="my-target" onchange="changeFunc">
+        <div class="p-menu-item">
+            1st Menu Item
+        </div>
+        <div class="p-menu-divider"></div>
+        <div class="p-menu-item">
+            2nd Menu Item
+        </div>
+        <div class="p-menu-item" disabled>
+            3nd Menu Item
+        </div>
+    </pretty-dropdown>`;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

@@ -1,0 +1,80 @@
+<div class="basic-modal demo-box">
+    <h3> Basic modal </h3>
+    <pretty-button value="Basic" onclick="openModal"></pretty-button>
+    <pretty-button value="Footless" onclick="openFootLessModal"></pretty-button>
+    <pretty-button value="custom footer" onclick="openCustomFooterModal"></pretty-button>
+    <pretty-button value="Transparent" type="dashed" onclick="openTransparentModal"></pretty-button>
+    <pretty-modal title="basic modal" id="basic-modal">
+        <p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
+    </pretty-modal>
+    <pretty-modal title="Footless Modal" id="fooless-modal" footless>
+        <p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
+    </pretty-modal>
+    <pretty-modal title="Custom Footer Modal" id="custom-modal">
+        <h3>Are you happy?</h3>
+        <div class="modal-footer">
+            <pretty-button value="Hell No!" type="danger" id="cancel"></pretty-button>
+            <pretty-button value="Hell Yeah!" type="primary" id="cancel"></pretty-button>
+        </div>
+    </pretty-modal>
+    <pretty-modal id="transparent-modal" footless headless transparent>
+        <div class="modal-img">
+            <img src="./img/c269f4b54361d5a415a6491cdf3e7e98.gif">
+        </div>
+    </pretty-modal>
+    <div class="props">
+        <h4> Attributes </h4>
+        <div>
+            <h5> footless </h5>
+            <div> Boolean </div>
+        </div>
+        <div>
+            <h5> headless </h5>
+            <div> Boolean </div>
+        </div>
+        <div>
+            <h5> transparent </h5>
+            <div> Boolean </div>
+        </div>
+        <div>
+            <h5> visible </h5>
+            <div> Boolean </div>
+        </div>
+    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
+</div>
+
+
+<script>
+    const exTXT = `
+    <pretty-modal title="basic modal" id="basic-modal">
+        <p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
+    </pretty-modal>
+    <pretty-modal title="Footless Modal" id="fooless-modal" footless>
+        <p>platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius</p>
+    </pretty-modal>
+    <pretty-modal title="Custom Footer Modal" id="custom-modal">
+        <h3>Are you happy?</h3>
+        <div class="modal-footer">
+            <pretty-button value="Hell No!" type="danger" id="cancel"></pretty-button>
+            <pretty-button value="Hell Yeah!" type="primary" id="cancel"></pretty-button>
+        </div>
+    </pretty-modal>
+    <pretty-modal id="transparent-modal" footless headless transparent>
+        <div class="modal-img">
+            <img src="./img/c269f4b54361d5a415a6491cdf3e7e98.gif">
+        </div>
+    </pretty-modal>
+    `;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

@@ -1,0 +1,57 @@
+<div class="basic-input-number demo-box">
+    <h3> Basic Input number </h3>
+    <div class="inp-num-demo">
+        <div>
+            <label> Default </label>
+            <pretty-input-number></pretty-input-number>
+        </div>
+        <div>
+            <label>With min and max</label>
+            <pretty-input-number min="3" max="7"></pretty-input-number>
+        </div>
+        <div>
+            <label>Custom Increment factor</label>
+            <pretty-input-number factor="5"></pretty-input-number>
+        </div>
+    </div>
+    <div class="props">
+        <h4> Attributes </h4>
+        <div>
+            <h5> size </h5>
+            <div> small </div>
+            <div> large </div>
+            <div> default </div>
+        </div>
+        <div>
+            <h5> min </h5>
+            <div> number </div>
+        </div>
+        <div>
+            <h5> max </h5>
+            <div> number </div>
+        </div>
+        <div>
+            <h5> factor </h5>
+            <div> number </div>
+        </div>
+    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
+</div>
+
+<script>
+    const exTXT = `
+    <pretty-input-number></pretty-input-number>
+    <pretty-input-number min="3" max="7"></pretty-input-number>
+    <pretty-input-number factor="5"></pretty-input-number>`;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

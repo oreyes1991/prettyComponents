@@ -1,0 +1,20 @@
+@media only screen and (max-width: 600px) {
+	.protrait-only {
+		display: block !important;
+	}
+	.landscape-only {
+		display: none;
+	}
+	.props {
+		grid-template-columns: 1fr 1fr;
+	}
+	.props > h4 {
+		grid-area: 1 / 1 / span 1 / span 2;
+	}
+	.demo-box {
+		width: 450px;
+	}
+	.inp-num-demo {
+		grid-template-columns: 1fr 1fr;
+	}
+}

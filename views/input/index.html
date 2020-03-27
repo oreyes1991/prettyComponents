@@ -1,0 +1,51 @@
+<div class="basic-input demo-box">
+    <h3> Basic Input </h3>
+    <pretty-input placeholder="Basic Input"></pretty-input>
+    <pretty-input placeholder="Password with show option" password="show"></pretty-input>
+    <pretty-input placeholder="Password without show option" password></pretty-input>
+    <pretty-input placeholder="Loading input" loading></pretty-input>
+    <div class="props">
+        <h4> Attributes </h4>
+        <div>
+            <h5> placeholder </h5>
+            <div> placeholder </div>
+        </div>
+        <div>
+            <h5> password </h5>
+            <div> boolean || show </div>
+            <p> Define input type as passworrd, if the value is "show" display a toggler </p>
+        </div>
+        <div>
+            <h5> loading </h5>
+            <div> boolean </div>
+            <p> loading state </p>
+        </div>
+        <div>
+            <h5> size </h5>
+            <div> small </div>
+            <div> large </div>
+            <div> default </div>
+        </div>
+    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
+</div>
+
+
+<script>
+    const exTXT = `
+    <pretty-input placeholder="Basic Input"></pretty-input>
+    <pretty-input placeholder="Password with show option" password="show"></pretty-input>
+    <pretty-input placeholder="Password without show option" password></pretty-input>
+    <pretty-input placeholder="Loading input" loading></pretty-input>`;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

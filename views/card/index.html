@@ -1,0 +1,67 @@
+<div class="basic-cards demo-box">
+    <h3> Basic card </h3>
+    <pretty-card title="Basic card" description="with description" bordered>
+        <span> content </span>
+        <span> content </span>
+    </pretty-card>
+    <label> Card with avatar </label>
+    <pretty-card
+        title="Amy Smith"
+        description="chief technology officer"
+        bordered
+        avatar="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574803077/girl-919048_960_720.jpg"
+    >
+     
+    </pretty-card>
+    <div class="props">
+        <h4> Attributes </h4>
+        <div>
+            <h5> title </h5>
+            <div> Card title </div>
+        </div>
+        <div>
+            <h5> description </h5>
+            <div> Card description </div>
+        </div>
+        <div>
+            <h5> avatar </h5>
+            <div> URL </div>
+            <p> image url </p>
+        </div>
+        <div>
+            <h5> bordered </h5>
+            <div> boolean </div>
+            <p>Display bordered card</p>
+        </div>
+    </div>
+    <pretty-collapse borderless>
+        <pretty-collapse-item title="Code Example">
+            <pre>
+                <code class="xml hljs">
+                    
+                </code>
+            </pre>
+        </pretty-collapse-item>
+    </pretty-collapse>
+</div>
+
+
+<script>
+    const exTXT = `
+    <pretty-card title="Basic card" description="with description" bordered>
+        <span> content </span>
+        <span> content </span>
+    </pretty-card>
+    <pretty-card
+        title="Amy Smith"
+        description="chief technology officer"
+        bordered
+        avatar="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574803077/girl-919048_960_720.jpg"
+    >
+     
+    </pretty-card>
+    `;
+        hljs.initHighlighting();
+    hljs.configure()
+    document.querySelector('code.xml').innerHTML = hljs.highlight('html', exTXT, 0 , 0).value
+</script>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Pretty Components">
+	<meta property="og:image" content="https://res.cloudinary.com/dvv4qgnka/image/upload/v1574877548/prettyOG.png">
+	<meta property="og:description" content="Styled WebComponents">
+	<meta property="og:url" content="https://rebelstackio.github.io/prettyComponents/index.html">
+	<meta name="twitter:card" content="summary_large_image">
+	<title>&lt;Pretty/&gt;</title>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			document.querySelector('.demo-head > .demo-gh').addEventListener('click',
+			() => {
+				window.open('https://github.com/rebelstackio/prettyComponents','_blank');
+			})
+			window.storage.on('change-view', (action) => {
+				const root = document.location.pathname;
+				document.querySelector('pretty-template')
+				.setAttribute('src', root + action.data)
+			})
+		});
+		
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<link rel="icon" type="image/png" href="/img/favicon.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
+</head>
+<body>
+	<div class="demo-head">
+		<img src="/img/c269f4b54361d5a415a6491cdf3e7e98.gif">
+		<h1 class="landscape-only">&lt;Pretty-components/&gt;</h1>
+		<h1 class="protrait-only">&lt;Pretty/&gt;</h1>
+		<div class="demo-gh">
+			<i class="fab fa-github"></i>
+		</div>
+	</div>
+	<pretty-menu offset-top="80">
+		<pretty-menu-item 
+			action="change-view" 
+			action-data="views/default/index.html"
+			selected
+			icon="fas fa-home">
+			<div>
+				Home
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/button/"
+		>
+			<div id="p-btns">
+				Buttons
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/dropdown/"
+		>
+			<div id="p-dropdown">
+				Dropdowns
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/input/"
+		>
+			<div id="p-input">
+				Inputs
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/inputnumber/"
+		>
+			<div id="p-inputnumber">
+				Input Number
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/tag/"
+		>
+			<div id="p-tag">
+				Tags
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/card/"
+		>
+			<div id="p-card">
+				Cards
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/collapse/"
+		>
+			<div id="p-collapse">
+				Collapse
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-item
+			action="change-view" 
+			action-data="views/modal/"
+		>
+			<div id="p-modal">
+				Modal
+			</div>
+		</pretty-menu-item>
+		<pretty-menu-group title="Getting started">
+			<pretty-menu-item
+			action="change-view" 
+			action-data="views/modal/"
+			>
+				<div>Menu item</div>
+			</pretty-menu-item
+			>
+		</pretty-menu-group>
+	</pretty-menu>
+	<div class="demo-layout">
+		<pretty-template styleless src="views/default/">
+
+		</pretty-template>
+	</div>
+<script type="text/javascript" src="main.js"></script></body>
+</html>
